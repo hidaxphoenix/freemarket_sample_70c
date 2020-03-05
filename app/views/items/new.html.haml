@@ -1,0 +1,51 @@
+.exhibition-wrapper
+  .header
+    .header__img
+      = image_tag '/assets/logo/logo.png', alt: "Footer-icon", id: "pic1", class: "header-image"
+  .main
+    .main__box
+      .main__box--image
+        .main__box--image--text
+          .main__box--image--text--sentence
+            出品画像
+            %span
+              必須
+        .main__box--image--description
+          最大10枚までアップロードできます
+        .main__box--image--form
+          .main__box--image--form--in
+            .main__box--image--form--in--box
+              .main__box--image--form--in--box--text
+                .main__box--image--form--in--box--text--icon
+                .main__box--image--form--in--box--text--sentence
+
+
+      .main__box--NameAndDescripution
+        .main__box--NameAndDescripution--itemname
+          .main__box--NameAndDescripution--itemname--sentence
+            商品名
+            %span
+              必須
+          .main__box--NameAndDescripution--itemname--form
+            .main__box--NameAndDescripution--itemname--form--box
+              %textarea{:placeholder => "40文字まで"}
+        .main__box--NameAndDescripution--itemDescription
+          .main__box--NameAndDescripution--itemDescription--sentence
+            商品の説明
+            %span
+              必須
+          .main__box--NameAndDescripution--itemDescription--form
+            .main__box--NameAndDescripution--itemDescription--form--box
+              %textarea{:placeholder => "商品の説明 (必須 1,000字以内)\n (色、素材、、素材、重さ、、素材、重さ、定価、注意点など)\n\n例)2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでおすすめです。"}
+          .main__box--NameAndDescripution--itemDescription--count
+            0/1000
+      .main__box--detail
+        .main__box--detail--text
+          商品の詳細
+        .main__box--detail--category
+
+
+
+      .main__box--delivery
+      .main__box--PriceAndButton
+  .fotter
