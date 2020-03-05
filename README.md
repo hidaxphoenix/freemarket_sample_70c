@@ -37,38 +37,29 @@ Things you may want to cover:
 |password|string|null: false|(min7)
 |first_name|string|null: false|(全角)
 |last_name|string|null: false|(全角)
-|f_first_name|string|null: false|(全角)
-|f_last_name|string|null: false|(全角)
-|b_year_id|integer|null: false,foreign_key: true|
-|b_month_id|integer|null: false,foreign_key: true|
-|b_day_id|integer|null: false,foreign_key: true|
+|first_name_kana|string|null: false|(全角)
+|last_name_kana|string|null: false|(全角)
 |tel|integer|null: false|
-|user_trade_id|integer|null :false,foreign_key: true|
-|card_id|integer|null: false,foreign_key: true|
+|birthday|integer|null :false|
 
 ### Association
 has_one user_addresses
-has_one b_years
-has_one b_months
-has_one b_days
 has_many cards
 has_one user_trades
+has_many items
 
 
 ## itemsテーブル
 
 |Column|Type|Option|
 |-------|-----|-------|
-|image|text|null: false, |
 |item_name|string|null: false, limit: 40|
 |description|text|null: false, limit: 1000|
-|condition_id|integer|null: false,foreign_key: true|
-|ship_charge_id|integer|null: false|
-|ship_area_id|integer|null: false,foreign_key: true|
-|ship_date_id|integer|null: false,foreign_key: true|
-|ship_method_id|integer|null: false|
 |price|integer|null: false|
-|user_trade_id|integer|null: false,foreign_key: true|
+|user_id|integer|null :false,foreign_key: true|
+|bland_id|integer|null :false,foreign_key: true|
+|category_id|integer|null :false,foreign_key: true|
+|image_id|integer|null: false,foreign_key: true|
 
 ### Association
 has_one ship_charges
@@ -76,9 +67,11 @@ has_one ship_areas
 has_one ship_dates
 has_one ship_methods
 has_one conditions
-belongs_to category_one
+belongs_to category
 belongs_to brand
 has_one user_trades
+has_many images
+belongs_to user
 
 
 ## user_addressテーブル
@@ -86,43 +79,14 @@ has_one user_trades
 |Column|Type|Option|
 |-------|-----|-------|
 |postcode|string|null: false|
-|address_one|string|null: false|
-|address_two|string|null: false|
-|address_three|string|null: false|
-|address_four|string|null: false|
+|address_prefecture|string|null: false|
+|address_city|string|null: false|
+|address_block|string|null: false|
+|address_building|string|null: false|
 |buy_tell|integer||
+|user_id|integer|null: false,foreign_key: true|
 
 ### Association 
-belongs_to user
-
-
-## b_year
-
-|Column|Type|Option|
-|-------|-----|-------|
-|year|integer|null: false|
-
-### Association
-belongs_to user
-
-
-## b_month
-
-|Column|Type|Option|
-|-------|-----|-------|
-|month|integer|null: false|
-
-### Association
-belongs_to user
-
-
-## b_day
-
-|Column|Type|Option|
-|-------|-----|-------|
-|day|integer|null: false|
-
-### Association
 belongs_to user
 
 
@@ -159,6 +123,7 @@ belongs_to  user
 |Column|Type|Option|
 |-------|-----|-------|
 |name|string|null: false|
+|item_id|integer|null: false,foreign_key: true|
 
 ### Association
 belongs_to item 
@@ -169,6 +134,7 @@ belongs_to item
 |Column|Type|Option|
 |-------|-----|-------|
 |name|string|null: false|
+|item_id|integer|null: false,foreign_key: true|
 
 ### Association
 belongs_to item
@@ -179,6 +145,7 @@ belongs_to item
 |Column|Type|Option|
 |-------|-----|-------|
 |name|string|null: false|
+|item_id|integer|null: false,foreign_key: true|
 
 ### Association
 belongs_to item
@@ -189,6 +156,7 @@ belongs_to item
 |Column|Type|Option|
 |-------|-----|-------|
 |name|string|null: false|
+|item_id|integer|null: false,foreign_key: true|
 
 ###  Association
 belongs_to item
@@ -199,43 +167,21 @@ belongs_to item
 |Column|Type|Option|
 |-------|-----|-------|
 |name|string|null: false|
+|item_id|integer|null: false,foreign_key: true|
 
 ### Association
 belongs_to item
 
 
-##category_one
-
-|Column|Type|Option|
-|-------|-----|-------|
-|name|string|null:false|
-|item_id|integer|null: false,foreign_key: true|
-
-### Association
-has_many items
-has_many category_twos
-
-
-##category_two
-
-|Column|Type|Option|
-|-------|-----|-------|
-|name|string|null:false|
-|category_one_id|integer|null: false,foreign_key: true|
-### Association
-belongs_to category_one
-Has_many category_threes
-
-
-##category_three
+##category
 
 |Column|Type|Option|
 |-------|-----|-------|
 |name|string|null: false|
-|category_two_id|integer|null: false,foreign_key: true|
+|ancestry|text|null: false|
 
 ### Association
-Belongs_to category_twe
+has_many items
 
 
 ## brand
@@ -243,7 +189,18 @@ Belongs_to category_twe
 |Column|Type|Option|
 |-------|-----|-------|
 |name|string|null: false|
-|item_id|integer|null :false,foreign_key: true|
 
 ### Association
 has_many items
+
+
+## image
+
+|Column|Type|Option|
+|-------|-----|-------|
+|image|text|null: false|
+|item_id|integer|null :false,foreign_key: true|
+
+### Association
+belongs_to item
+
