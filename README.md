@@ -56,22 +56,23 @@ has_many items
 |item_name|string|null: false, limit: 40|
 |description|text|null: false, limit: 1000|
 |price|integer|null: false|
+|ship_charge|string|null: false|
+|ship_area|string|null: false|
+|ship_date|string|null: false|
+|ship_method|string|null: false|
 |user_id|integer|null :false,foreign_key: true|
 |bland_id|integer|null :false,foreign_key: true|
 |category_id|integer|null :false,foreign_key: true|
 |image_id|integer|null: false,foreign_key: true|
 
 ### Association
-has_one ship_charges
-has_one ship_areas
-has_one ship_dates
-has_one ship_methods
 has_one conditions
 belongs_to category
 belongs_to brand
 has_one user_trades
 has_many images
 belongs_to user
+has_many histories
 
 
 ## user_addressテーブル
@@ -118,51 +119,7 @@ belongs_to item
 belongs_to  user
 
 
-##ship_charge
-
-|Column|Type|Option|
-|-------|-----|-------|
-|name|string|null: false|
-|item_id|integer|null: false,foreign_key: true|
-
-### Association
-belongs_to item 
-
-
-##ship_area
-
-|Column|Type|Option|
-|-------|-----|-------|
-|name|string|null: false|
-|item_id|integer|null: false,foreign_key: true|
-
-### Association
-belongs_to item
-
-
-##ship_date
-
-|Column|Type|Option|
-|-------|-----|-------|
-|name|string|null: false|
-|item_id|integer|null: false,foreign_key: true|
-
-### Association
-belongs_to item
-
-
-## ship_method_id
-
-|Column|Type|Option|
-|-------|-----|-------|
-|name|string|null: false|
-|item_id|integer|null: false,foreign_key: true|
-
-###  Association
-belongs_to item
-
-
-##condition
+## condition
 
 |Column|Type|Option|
 |-------|-----|-------|
@@ -204,3 +161,12 @@ has_many items
 ### Association
 belongs_to item
 
+
+## history
+
+|Column|Type|Option|
+|-------|-----|-------|
+|item_id|integer|null :false,foreign_key: true|
+
+### association
+belings_to item
