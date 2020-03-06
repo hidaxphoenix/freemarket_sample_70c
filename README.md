@@ -39,7 +39,7 @@ Things you may want to cover:
 |last_name|string|null: false|(全角)
 |first_name_kana|string|null: false|(全角)
 |last_name_kana|string|null: false|(全角)
-|tel|integer|null: false|
+|phone|integer|null: false|
 |birthday|integer|null :false|
 
 ### Association
