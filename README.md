@@ -53,7 +53,7 @@ has_many items
 
 |Column|Type|Option|
 |-------|-----|-------|
-|item_name|string|null: false, limit: 40|
+|name|string|null: false, limit: 40|
 |description|text|null: false, limit: 1000|
 |price|integer|null: false|
 |ship_charge|string|null: false|
