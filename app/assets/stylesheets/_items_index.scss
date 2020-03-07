@@ -30,7 +30,7 @@ body{
 ul{
   list-style: none;
 }
-a{
+.No2-link{
   text-decoration: none;
   color: black;
   cursor: pointer;
@@ -82,7 +82,7 @@ img{
   width: $btn-size;
 }
 .gBtn{
-  width: $btn-size;
+  width: 200px;
 }
 
 .pickupContainer:last-child{
@@ -107,7 +107,7 @@ img{
         padding-bottom: $ten;
         margin-right: 30px;
         border-radius: 4px;
-        a{
+        .No1-link{
           width: 140px;
           display: block;
           img{
@@ -157,9 +157,17 @@ img{
         &__category{
           text-decoration: none;
           padding: $zero;
+          .cat{
+            text-decoration: none;
+            color: black;
+          }
         }
         &__bland{
-          padding-left: 30px;
+          .bland{
+            text-decoration: none;
+            color: black;
+            margin-left: 25px;
+          }
         }
       }
       .listright{
@@ -215,14 +223,15 @@ img{
       &__btn{
         display: flex;
         margin: 24px $zero $zero $zero;
-        .app{
-          width: 90%;
-          vertical-align: bottom;
-          margin: #{$ten} #{$ten};
+        height: 55px;
+        .aBtn{
+          margin-top: 12px;
+          .app{
+            margin-right: #{$ten};
+          }
         }
         .google{
-          width: $perfect;
-          vertical-align: bottom;
+          width: 200px;
         }
       }
     }
@@ -321,6 +330,7 @@ img{
         }
         .google{
           width: 180px;
+          height: 70px;
           vertical-align: bottom;
         }
       }
@@ -384,7 +394,7 @@ img{
     .productBox{
       .productHead{
         text-align: $center;
-        a{
+        .No6-link{
           font-size: $twenty;
           text-decoration: none;
           color: #3CCACE;
@@ -402,9 +412,10 @@ img{
           width: 220px;
           display: inline-block;
           float: left;
-          a{
+          .No7-link{
             background-color: #fff;
             display: inline-block;
+            text-decoration: none;
             .productList--img{
               width: 220px;
               height: 150px;
@@ -485,15 +496,22 @@ img{
       display: flex;
       justify-content: $center;
       margin: $twenty auto $zero;
-      a:first-child{
+      .No2-link{
         margin-right: $ten;
-        .app{
-          width: $btn-size;
-          padding: $ten ;
+        margin-top: 20px;
+        .aBtn{
+          margin-top: 50px;
+          .app{
+            padding: $ten;
+          }
         }
-      }
-      .google{
-        width: $btn-size;
+        .gBtn{
+          .google{
+            height: 70px;
+            width: 180px;
+            margin-top: 50px;
+          }
+        }
       }
     }
   }
@@ -520,7 +538,7 @@ img{
       }
       ul{
         li{
-          a{
+          .No9-link{
             color: #fff;
             text-decoration: none;
             font-size: 12px;
@@ -540,25 +558,24 @@ img{
   }
 }
 
-a{
-  .purchaseBtn{
-    width: 120px;
-    background: #3CCACE;
-    text-align: $center;
-    border-radius: 4%;
-    bottom: 32px;
-    right: 32px;
-    position: fixed;
-    padding: 15px;
-    &__text{
-      color: #fff;
-      display: block;
-      font-size: $twenty;
-      text-decoration: none;
-      margin-bottom: 5px;
-    }
-    &__icon{
-      width: $sixty;
-    }
+
+.purchaseBtn{
+  width: 120px;
+  background: #3CCACE;
+  text-align: $center;
+  border-radius: 4%;
+  bottom: 32px;
+  right: 32px;
+  position: fixed;
+  padding: 15px;
+  &__text{
+    color: #fff;
+    display: block;
+    font-size: $twenty;
+    text-decoration: none;
+    margin-bottom: 5px;
+  }
+  &__icon{
+    width: $sixty;
   }
 }
