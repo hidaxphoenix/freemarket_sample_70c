@@ -53,7 +53,7 @@ has_many items
 
 |Column|Type|Option|
 |-------|-----|-------|
-|item_name|string|null: false, limit: 40|
+|name|string|null: false, limit: 40|
 |description|text|null: false, limit: 1000|
 |price|integer|null: false|
 |ship_charge|string|null: false|
@@ -61,7 +61,7 @@ has_many items
 |ship_date|string|null: false|
 |ship_method|string|null: false|
 |user_id|integer|null :false,foreign_key: true|
-|bland_id|integer|null :false,foreign_key: true|
+|brand_id|integer|null :false,foreign_key: true|
 |category_id|integer|null :false,foreign_key: true|
 |image_id|integer|null: false,foreign_key: true|
 
@@ -145,7 +145,7 @@ has_many items
 
 |Column|Type|Option|
 |-------|-----|-------|
-|name|string|null: false|
+|name|string|
 
 ### Association
 has_many items

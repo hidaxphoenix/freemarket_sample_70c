@@ -1,51 +1,145 @@
-.exhibition-wrapper
+.exhibit-wrapper
   .header
     .header__img
-      = image_tag '/assets/logo/logo.png', alt: "Footer-icon", id: "pic1", class: "header-image"
+      = link_to "root_path" do
+        = image_tag '/assets/logo/logo.png', alt: "Footer-icon", id: "pic1", class: "header-image"
   .main
     .main__box
-      .main__box--image
-        .main__box--image--text
-          .main__box--image--text--sentence
+      .main__box__image
+        .main__box__image__text
+          .main__box__image__text__sentence
             出品画像
             %span
               必須
-        .main__box--image--description
+        .main__box__image__description
           最大10枚までアップロードできます
-        .main__box--image--form
-          .main__box--image--form--in
-            .main__box--image--form--in--box
-              .main__box--image--form--in--box--text
-                .main__box--image--form--in--box--text--icon
-                .main__box--image--form--in--box--text--sentence
+        .main__box__image__form
+          .main__box__image__form__in
+            .main__box__image__form__in__box
+              .main__box__image__form__in__box__text
+                .main__box__image__form__in__box__text__icon
+                  %i.fas.fa-camera
+                .main__box__image__form__in__box__text__sentence
+                  ドラッグアンドドロップ<br>またはクリックしてまたはクリックしてファイルをアップロード
 
 
-      .main__box--NameAndDescripution
-        .main__box--NameAndDescripution--itemname
-          .main__box--NameAndDescripution--itemname--sentence
+      .main__box__NameAndDescripution
+        .main__box__NameAndDescripution__itemname
+          .main__box__NameAndDescripution__itemname__sentence
             商品名
             %span
               必須
-          .main__box--NameAndDescripution--itemname--form
-            .main__box--NameAndDescripution--itemname--form--box
-              %textarea{:placeholder => "40文字まで"}
-        .main__box--NameAndDescripution--itemDescription
-          .main__box--NameAndDescripution--itemDescription--sentence
+          .main__box__NameAndDescripution__itemname__form
+            .main__box__NameAndDescripution__itemname__form__box
+              %input.itemnameform{:placeholder => "40文字まで"}/
+        .main__box__NameAndDescripution__itemDescription
+          .main__box__NameAndDescripution__itemDescription__sentence
             商品の説明
             %span
               必須
-          .main__box--NameAndDescripution--itemDescription--form
-            .main__box--NameAndDescripution--itemDescription--form--box
+          .main__box__NameAndDescripution__itemDescription__form
+            .main__box__NameAndDescripution__itemDescription__form__box
               %textarea{:placeholder => "商品の説明 (必須 1,000字以内)\n (色、素材、、素材、重さ、、素材、重さ、定価、注意点など)\n\n例)2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでおすすめです。"}
-          .main__box--NameAndDescripution--itemDescription--count
+                
+          .main__box__NameAndDescripution__itemDescription__count
             0/1000
-      .main__box--detail
-        .main__box--detail--text
+      .main__box__detail
+        .main__box__detail__text
           商品の詳細
-        .main__box--detail--category
+        .main__box__detail__category
+          .main__box__detail__category__text
+            カテゴリー
+            %span
+              必須
+          .main__box__detail__category__form
+            .main__box__detail__category__form__box
+              %select
+        .main__box__detail__bland
+          .main__box__detail__bland__text
+            ブランド
+            %span
+              任意
+          .main__box__detail__bland__form
+            .main__box__detail__bland__form__box
+              %input.blandform{:placeholder => "例) シャネル"}
+        .main__box__detail__status
+          .main__box__detail__status__text
+            商品の状態
+            %span
+              必須
+          .main__box__detail__status__form
+            .main__box__detail__status__form__box
+              %select
+      .main__box__delivery
+        .main__box__delivery__text
+          配送について
+        .main__box__delivery__fee
+          .main__box__delivery__fee__text
+            配送料の負担
+            %span
+              必須
+          .main__box__delivery__fee__form
+            .main__box__delivery__fee__form__box
+              %select
+        .main__box__delivery__area
+          .main__box__delivery__area__text
+            発送先の地域
+            %span
+              必須
+          .main__box__delivery__area__form
+            .main__box__delivery__area__form__box
+              %select
+        .main__box__delivery__day
+          .main__box__delivery__day__text
+            発送までの日数
+            %span
+              必須
+          .main__box__delivery__day__form
+            .main__box__delivery__day__form__box
+              %select
+      .main__box__price
+        .main__box__price__text
+          価格 (¥300~9,999,999)
+        .main__box__price__value
+          .main__box__price__value__wrapper
+            .main__box__price__value__wrapper__text
+              販売価格
+              %span
+                必須
+            .main__box__price__value__wrapper__form
+              .main__box__price__value__wrapper__form__mark
+                ¥
+              .main__box__price__value__wrapper__form__input
+                .main__box__price__value__wrapper__form__input__box
+                  %input.priceform{:type => "number", :placeholder => 0}/
+          .main__box__price__value__commission
+            .main__box__price__value__commission__text
+              販売手数料　(10%)
+            .main__box__price__value__commission__result
+              100
+          .main__box__price__value__benefit
+            .main__box__price__value__benefit__text
+              販売利益
+            .main__box__price__value__benefit__result
+              110
 
+      .main__box__PriceAndButton
+        .main__box__PriceAndButton__red
+          %input#redbutton{type: "submit", value: "出品する"}
+        .main__box__PriceAndButton__gray
+          %input#graybutton{type: "submit", value: "もどる"}
 
-
-      .main__box--delivery
-      .main__box--PriceAndButton
-  .fotter
+      .main__box__important
+        禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
+  .footer.bottom
+    .footer__bottom
+      .footer__bottom__text
+        = link_to "root_path" do
+          %p プライバシーポリシー
+        = link_to "root_path" do
+          %p メルカリ利用規約
+        = link_to "root_path" do
+          %p 特定商取引に関する表記
+      = link_to "root_path" do
+        = image_tag "/assets/logo/logo-white.png"
+      %p© Furima, Inc.
