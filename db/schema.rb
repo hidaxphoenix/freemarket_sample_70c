@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_04_120231) do
+ActiveRecord::Schema.define(version: 2020_03_06_120045) do
+
+  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "postcode", null: false
+    t.string "address_prefecture", null: false
+    t.string "address_city", null: false
+    t.string "address_block", null: false
+    t.string "address_building"
+    t.bigint "buy_tell"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
@@ -20,8 +32,8 @@ ActiveRecord::Schema.define(version: 2020_03_04_120231) do
     t.string "last_name", null: false
     t.string "first_name_kana", null: false
     t.string "last_name_kana", null: false
-    t.integer "phone", null: false
-    t.integer "birthday", null: false
+    t.bigint "phone", null: false
+    t.date "birthday", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
