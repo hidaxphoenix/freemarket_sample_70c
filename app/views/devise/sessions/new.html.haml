@@ -1,7 +1,5 @@
 %header.user_header
-  .user_logo
-    = link_to root_path do
-      =image_tag "/assets/logo/logo.png"
+  = render "items/header"
 
 .sign-up
   .sign-up__text
@@ -24,14 +22,5 @@
         = f.submit "ログイン"
     = render "devise/shared/links"
 %footer.bottom
-  .bottom__text
-    = link_to root_path do
-      %p プライバシーポリシー
-    = link_to root_path do
-      %p メルカリ利用規約
-    = link_to root_path do
-      %p 特定商取引に関する表記
-  = link_to root_path do
-    =image_tag "/assets/logo/logo-white.png"
-  %p© Furima, Inc.
+  = render "items/footer"
 
