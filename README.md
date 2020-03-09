@@ -107,7 +107,7 @@ belongs_to user
 belongs_to user
 
 
-## user_trade
+## trade
 
 |Column|Type|Option|
 |-------|-----|-------|

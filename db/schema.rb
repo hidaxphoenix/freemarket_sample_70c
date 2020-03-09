@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_07_084241) do
+ActiveRecord::Schema.define(version: 2020_03_09_081711) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "postcode", null: false
@@ -46,6 +46,14 @@ ActiveRecord::Schema.define(version: 2020_03_07_084241) do
     t.index ["item_id"], name: "index_conditions_on_item_id"
   end
 
+  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "image", null: false
+    t.bigint "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_images_on_item_id"
+  end
+
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.text "description", null: false
@@ -59,6 +67,15 @@ ActiveRecord::Schema.define(version: 2020_03_07_084241) do
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_items_on_name"
     t.index ["user_id"], name: "index_items_on_user_id"
+  end
+
+  create_table "trades", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_trades_on_item_id"
+    t.index ["user_id"], name: "index_trades_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -81,5 +98,8 @@ ActiveRecord::Schema.define(version: 2020_03_07_084241) do
   end
 
   add_foreign_key "conditions", "items"
+  add_foreign_key "images", "items"
   add_foreign_key "items", "users"
+  add_foreign_key "trades", "items"
+  add_foreign_key "trades", "users"
 end
