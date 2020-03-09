@@ -5,6 +5,48 @@ ja:
       - :month
       - :day
   activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            nickname:
+              blank: "を入力してください"
+            email:
+              blank: "を入力してください"
+            encrypted_password:
+              invalid: "を入力してください"
+            first_name:
+              invalid: "を入力してください"
+            last_name:
+              invalid: "を入力してください"
+            first_name_kana:
+              invalid: "を入力してください"
+            last_name_kana:
+              invalid: "を入力してください"
+            password:
+              blank: "を入力してください"
+            password_confirmation:
+              confirmation: "とパスワードの入力が一致しません"
+            phone:
+              blank: "を入力してください"
+            birthday:
+              blank: "を入力してください"
+        address:
+          aprefecture:
+            blank:
+          attributes:
+            user_id:
+              blank: "が空になっています"
+            postcode:
+              blank: "を入力してください"
+            address_prefecture:
+              blank: "を入力してください"
+            address_building:
+              blank: "を入力してください"
+            address_city:
+              blank: "を入力してください"
+            address_block:
+              blank: "を入力してください"
     attributes:
       user:
         current_password: "現在のパスワード"

@@ -2,14 +2,14 @@
   .headerinner
     .main-header
       %h1.icon
-        = link_to '#' , class: "No1-link" do
+        = link_to '#' do
           =image_tag '/assets/logo/logo.png', class: "image1"
       .searchBox
         %form{:action => "#", class: "form"}
           %input{class: "searchBox--input", placeholder: "キーワードから検索", class: "input"}
           %button{:type => "submit"}
             .searchBox__icon
-              = image_tag asset_path('icon/icon-search 1.png'), class: "image2"
+              = image_tag '/assets/icon/icon-search 1.png', class: "image2"
     .nav
       %ul.listleft
         %li.listleft__category
@@ -21,10 +21,10 @@
 
       %ul.listright
         %li.listright__login
-          = link_to '#', class: "No2-link" do
+          = link_to new_user_session_path do
             ログイン
         %li.listright__new
-          = link_to '#' , class: "No2-link" do
+          = link_to new_user_registration_path do
             新規会員登録
 
 .main
@@ -36,12 +36,10 @@
         FURIMAは誰でもかんたんに出品・購入ができる
         %br フリマアプリです
       .content__btn
-        = link_to '#', class: "No2-link" do
-          .aBtn
-            = image_tag '/assets/pict/app.svg', class: "app"
-        = link_to '#', class: "No2-link" do
-          .gBtn
-            = image_tag '/assets/pict/google-play-badge.png', class: "google"
+        = link_to '#', class:"aBtn" do
+          = image_tag '/assets/pict/app.svg', class: "app"
+        = link_to '#', class:"gBtn" do
+          = image_tag '/assets/pict/google-play-badge.png', class: "google"
   %section.top-page
     %h2.subtitle FURIMAが選ばれる３つの理由
     .bar
@@ -49,7 +47,7 @@
       %li.list
         .list__pict
           %span.number 1
-          = image_tag asset_path('pict/pict-reason-01.jpg'), class: "image4"
+          = image_tag '/assets/pict/pict-reason-01.jpg', class: "image4"
         %h3.list__text
           %span ３分
           ですぐに出品
@@ -57,7 +55,7 @@
       %li.list
         .list__pict
           %span.number ２
-          = image_tag asset_path('pict/pict-reason-02.jpg'), class: "image5"
+          = image_tag '/assets/pict/pict-reason-02.jpg', class: "image5"
         %h3.list__text
           %span シンプル
           で使いやすい
@@ -65,7 +63,7 @@
       %li.list
         .list__pict
           %span.number 3
-          = image_tag asset_path('pict/pict-reason-03.jpg'), class: "image6"
+          = image_tag '/assets/pict/pict-reason-03.jpg', class: "image6"
         %h3.list__text
           手数料
           %span 業界最安
@@ -80,12 +78,10 @@
         %br
         欲しかったあの商品に出会えるかもしれません。
       .btn
-        = link_to '#' , class: "No2-link" do
-          .aBtn
-            = image_tag '/assets/pict/app.svg', class: "app"
-        = link_to '#' , class: "No2-link" do
-          .gBtn
-            = image_tag '/assets/pict/google-play-badge.png', class: "google"
+        = link_to '#' do
+          = image_tag '/assets/pict/app.svg', class: "app"
+        = link_to '#' do
+          = image_tag '/assets/pict/google-play-badge.png', class: "google"
   %section.topkey-sign
     %h2.head
       "FURIMAの特徴"
@@ -93,30 +89,30 @@
     .items
       %section.item
         %figure.item__img
-          = image_tag asset_path('icon/icon-01.png'), class: "image7"
+          = image_tag '/assets/icon/icon-01.png', class: "image7"
         %h3.item__subtitle 簡単に売り買いできる
         %p.item__detail スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
       %section.item
         %figure.item__img
-          = image_tag asset_path('icon/icon-03.png'), class: "image8"
+          = image_tag '/assets/icon/icon-03.png', class: "image8"
         %h3.item__subtitle 売上金は即日振込みに対応
         %p.item__detail 午前９時までに振込を依頼いただければ、翌日に指定の口座に入金いたします！
       %section.item
         %figure.item__img
-          = image_tag asset_path('icon/icon-04.png'), class: "image9"
+          = image_tag '/assets/icon/icon-04.png', class: "image9"
         %h3.item__subtitle 様々な支払いに対応
         %p.item__detail お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
   %section.pickup-container
     %h2.head ピックアップカテゴリー
     .productBox
       .productHead
-        = link_to '#' , class: "No6-link" do
+        = link_to '#' do
           %h3.title 新規投稿商品
       .productLists
         .productList
-          = link_to "/products/3" , class: "No7-link" do
+          = link_to "/products/3" do
             %figure.productList--img
-              = image_tag asset_path('pict/product1.png')
+              = image_tag '/assets/pict/product1.png'
             .product--body
               %h3.name product3
               .details
@@ -127,9 +123,9 @@
                     0
                 %p （税込）
         .productList
-          = link_to "/products/2" , class: "No7-link" do
+          = link_to "/products/2" do
             %figure.productList--img
-              = image_tag asset_path('pict/product2.png')
+              = image_tag '/assets/pict/product2.png'
             .product--body
               %h3.name product2
               .details
@@ -140,9 +136,9 @@
                     0
                 %p （税込）
         .productList
-          = link_to "/products/1" , class: "No7-link" do
+          = link_to "/products/1" do
             %figure.productList--img
-              = image_tag asset_path('pict/product3.png')
+              = image_tag '/assets/pict/product3.png'
             .product--body
               %h3.name product1
               .details
@@ -156,13 +152,13 @@
     %h2.head ピックアップブランド
     .productBox
       .productHead
-        = link_to '#' , class: "No2-link" do
+        = link_to '#' do
           %h3.title アーカイバ
       .productLists
         .productList
-          = link_to "/products/3" , class: "No7-link" do
+          = link_to "/products/3" do
             %figure.productList--img
-              = image_tag asset_path('pict/product1.png')
+              = image_tag '/assets/pict/product1.png'
             .product--body
               %h3.name product3
               .details
@@ -173,9 +169,9 @@
                     0
                 %p （税込）
         .productList
-          = link_to "/products/2" , class: "No7-link" do
+          = link_to "/products/2" do
             %figure.productList--img
-              = image_tag asset_path('pict/product2.png')
+              = image_tag '/assets/pict/product2.png'
             .product--body
               %h3.name product2
               .details
@@ -186,9 +182,9 @@
                     0
                 %p （税込）
         .productList
-          = link_to "/products/1" , class: "No7-link" do
+          = link_to "/products/1" do
             %figure.productList--img
-              = image_tag asset_path('pict/product3.png')
+              = image_tag '/assets/pict/product3.png'
             .product--body
               %h3.name product1
               .details
@@ -198,64 +194,62 @@
                     %i.fa.fa-star
                     0
                 %p （税込）
+
 %aside.banner
   .inner
     %h2.inner__title だれでもかんたん、人生を変えるフリマアプリ
     %p.inner__text 今すぐ無料ダウンロード!
     .inner__icon
-      = link_to '#' , class: "No2-link" do
-        .aBtn
-          = image_tag '/assets/pict/app.svg', class: "app"
-      = link_to '#' , class: "No2-link" do
-        .gBtn
-          = image_tag '/assets/pict/google-play-badge.png', class: "google"
+      = link_to '#' do
+        = image_tag '/assets/pict/app.svg', class: "app"
+      = link_to '#' do
+        = image_tag '/assets/pict/google-play-badge.png', class: "google"
+
+
 .footer
   %ul.contents
     %li.content
       %h2.content__head FURIMAについて
       %ul
         %li
-          = link_to '#' , class: "No9-link" do
+          = link_to '#' do
             会社概要(運営会社)
         %li
-          = link_to '#' , class: "No9-link" do
+          = link_to '#' do
             プライバシーポリシー
         %li
-          = link_to '#' , class: "No9-link" do
+          = link_to '#' do
             FURIMA利用規約
         %li
-          = link_to '#' , class: "No9-link" do
+          = link_to '#' do
             ポイントに関する特約
     %li.content
       %h2.content__head FURIMAを見る
       %ul
         %li
-          = link_to '#' , class: "No9-link" do
+          = link_to '#' do
             カテゴリー一覧
         %li
-          = link_to '#' , class: "No9-link" do
+          = link_to '#' do
             ブランド一覧
     %li.content
       %h2.content__head ヘルプ＆ガイド
       %ul
         %li
-          = link_to '#' , class: "No9-link" do
+          = link_to '#' do
             FURIMAガイド
         %li
-          = link_to '#' , class: "No9-link" do
+          = link_to '#' do
             FURIMAロゴ利用ガイドライン
         %li
-          = link_to '#' , class: "No9-link" do
+          = link_to '#' do
             お知らせ
   .footer__logo
-    = link_to '#' , class: "No2-link" do
+    = link_to '#' do
       = image_tag '/assets/logo/logo-white.png'
-
   %p © FURIMA
 
-= link_to '#' , class: "No11-link" do
+= link_to '#' do
   .purchaseBtn
     %span.purchaseBtn__text 出品する
-    = image_tag asset_path('icon/icon_camera.png'), class: "purchaseBtn__icon" 
-
--# = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
+    = image_tag '/assets/icon/icon_camera.png', class: "purchaseBtn__icon"

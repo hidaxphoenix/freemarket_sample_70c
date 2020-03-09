@@ -1,8 +1,5 @@
-%header
-  %h1
-    .logo
-      = link_to root_path do
-        =image_tag "/assets/logo/logo.png"
+%header.user_header
+  = render "items/header"
 
 .sign
   .sign-up
@@ -19,14 +16,4 @@
           = f.submit "パスワードの再設定"
       = render "devise/shared/links"
 %footer.bottom
-  .bottom__text
-    = link_to root_path do
-      %p プライバシーポリシー
-    = link_to root_path do
-      %p メルカリ利用規約
-    = link_to root_path do
-      %p 特定商取引に関する表記
-  = link_to root_path do
-    =image_tag "/assets/logo/logo-white.png"
-  %p© Furima, Inc.
-
+  = render "items/footer"
