@@ -21,6 +21,7 @@
     }
   }
   .main{
+    height: 2000px;
     display: flex;
     justify-content: center;
     &__box{
@@ -84,7 +85,6 @@
       }
       &__NameAndDescripution{
         height: 336px;
-        width: 620px;
         padding: 40px;
         border-top: 0.05rem  solid rgb(245, 245, 245);
         border-bottom: 0.05rem  solid rgb(245, 245, 245);
@@ -176,7 +176,7 @@
       }
       &__detail{
         border-bottom: 0.05rem  solid rgb(245, 245, 245);
-        width: 620px;
+        width: 100%;
         padding: 40px;
         &__text{
           color: rgb(136, 136, 136);
@@ -577,33 +577,5 @@
         margin: 0 auto;
       }
     }
-  }
-  .footer{
-    &__bottom{
-      width: 456px;
-      height: 220px;
-      margin: 0 auto;
-      z-index: 1;
-      height: 250px;
-      text-align: center;
-      &__text{
-        padding: 40px;
-        display: flex;
-        justify-content: space-around;
-        font-size: 12px;
-        p{
-          color: black;
-        }
-      }
-      a{
-        text-decoration: none;
-        img{
-          padding: 20px;
-        width: 150px;
-        height: 50px;
-        text-decoration: none;
-        }
-      }
-    }    
   }
 }

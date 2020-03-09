@@ -177,32 +177,4 @@
       }
     }
   }
-  .footer{
-    &__bottom{
-      width: 456px;
-      height: 220px;
-      margin: 0 auto;
-      z-index: 1;
-      height: 250px;
-      text-align: center;
-      &__text{
-        padding: 40px;
-        display: flex;
-        justify-content: space-around;
-        font-size: 12px;
-        p{
-          color: black;
-        }
-      }
-      a{
-        text-decoration: none;
-        img{
-          padding: 20px;
-        width: 150px;
-        height: 50px;
-        text-decoration: none;
-        }
-      }
-    }    
-  }
 }

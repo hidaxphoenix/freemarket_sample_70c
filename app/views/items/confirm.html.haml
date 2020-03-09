@@ -1,8 +1,7 @@
 .ItemConfirmWrapper
-  .header
-    .header__img
-      = link_to "root_path" do
-        = image_tag '/assets/logo/logo.png', alt: "Footer-icon", id: "pic1", class: "header-image"
+  %header.user_header
+    = render "items/header"
+
   .main
     .wrapper
       .wrapper__topbox
@@ -50,15 +49,5 @@
                 %input#backbutton{type: "submit", value: "購入する"}
 
 
-  .footer.bottom
-    .footer__bottom
-      .footer__bottom__text
-        = link_to "root_path" do
-          %p プライバシーポリシー
-        = link_to "root_path" do
-          %p メルカリ利用規約
-        = link_to "root_path" do
-          %p 特定商取引に関する表記
-      = link_to "root_path" do
-        = image_tag "/assets/logo/logo-white.png"
-      %p© Furima, Inc.
+  %footer.bottom
+    = render "items/footer"
