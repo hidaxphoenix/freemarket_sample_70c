@@ -2,8 +2,8 @@
   .headerinner
     .main-header
       %h1.icon
-        = link_to '#' , class: "No1-link" do
-          =image_tag '/assets/logo/logo.png', class: "image1"
+        = link_to '#' do
+          =image_tag asset_path('logo/logo.png'), class: "image1"
       .searchBox
         %form{:action => "#", class: "form"}
           %input{class: "searchBox--input", placeholder: "キーワードから検索", class: "input"}
@@ -21,10 +21,10 @@
 
       %ul.listright
         %li.listright__login
-          = link_to '#', class: "No2-link" do
+          = link_to new_user_session_path, class:"aaa" do
             ログイン
         %li.listright__new
-          = link_to '#' , class: "No2-link" do
+          = link_to new_user_registration_path, class:"aaa" do
             新規会員登録
 
 .main
@@ -36,12 +36,10 @@
         FURIMAは誰でもかんたんに出品・購入ができる
         %br フリマアプリです
       .content__btn
-        = link_to '#', class: "No2-link" do
-          .aBtn
-            = image_tag '/assets/pict/app.svg', class: "app"
-        = link_to '#', class: "No2-link" do
-          .gBtn
-            = image_tag '/assets/pict/google-play-badge.png', class: "google"
+        = link_to '#', class:"aBtn" do
+          = image_tag asset_path('pict/app.svg'), class: "app"
+        = link_to '#', class:"gBtn" do
+          = image_tag asset_path('pict/google-play-badge.png'), class: "google"
   %section.top-page
     %h2.subtitle FURIMAが選ばれる３つの理由
     .bar
@@ -80,12 +78,10 @@
         %br
         欲しかったあの商品に出会えるかもしれません。
       .btn
-        = link_to '#' , class: "No2-link" do
-          .aBtn
-            = image_tag '/assets/pict/app.svg', class: "app"
-        = link_to '#' , class: "No2-link" do
-          .gBtn
-            = image_tag '/assets/pict/google-play-badge.png', class: "google"
+        = link_to '#' do
+          = image_tag asset_path('pict/app.svg'), class: "app"
+        = link_to '#' do
+          = image_tag asset_path('pict/google-play-badge.png'), class: "google"
   %section.topkey-sign
     %h2.head
       "FURIMAの特徴"
@@ -110,11 +106,11 @@
     %h2.head ピックアップカテゴリー
     .productBox
       .productHead
-        = link_to '#' , class: "No6-link" do
+        = link_to '#', class:"aaa" do
           %h3.title 新規投稿商品
       .productLists
         .productList
-          = link_to "/products/3" , class: "No7-link" do
+          = link_to "/products/3", class:"aaa" do
             %figure.productList--img
               = image_tag asset_path('pict/product1.png')
             .product--body
@@ -127,7 +123,7 @@
                     0
                 %p （税込）
         .productList
-          = link_to "/products/2" , class: "No7-link" do
+          = link_to "/products/2", class:"aaa" do
             %figure.productList--img
               = image_tag asset_path('pict/product2.png')
             .product--body
@@ -140,7 +136,7 @@
                     0
                 %p （税込）
         .productList
-          = link_to "/products/1" , class: "No7-link" do
+          = link_to "/products/1", class:"aaa" do
             %figure.productList--img
               = image_tag asset_path('pict/product3.png')
             .product--body
@@ -156,11 +152,11 @@
     %h2.head ピックアップブランド
     .productBox
       .productHead
-        = link_to '#' , class: "No2-link" do
+        = link_to '#', class:"aaa" do
           %h3.title アーカイバ
       .productLists
         .productList
-          = link_to "/products/3" , class: "No7-link" do
+          = link_to "/products/3", class:"aaa" do
             %figure.productList--img
               = image_tag asset_path('pict/product1.png')
             .product--body
@@ -173,7 +169,7 @@
                     0
                 %p （税込）
         .productList
-          = link_to "/products/2" , class: "No7-link" do
+          = link_to "/products/2", class:"aaa" do
             %figure.productList--img
               = image_tag asset_path('pict/product2.png')
             .product--body
@@ -186,7 +182,7 @@
                     0
                 %p （税込）
         .productList
-          = link_to "/products/1" , class: "No7-link" do
+          = link_to "/products/1", class:"aaa" do
             %figure.productList--img
               = image_tag asset_path('pict/product3.png')
             .product--body
@@ -198,64 +194,62 @@
                     %i.fa.fa-star
                     0
                 %p （税込）
+
 %aside.banner
   .inner
     %h2.inner__title だれでもかんたん、人生を変えるフリマアプリ
     %p.inner__text 今すぐ無料ダウンロード!
     .inner__icon
-      = link_to '#' , class: "No2-link" do
-        .aBtn
-          = image_tag '/assets/pict/app.svg', class: "app"
-      = link_to '#' , class: "No2-link" do
-        .gBtn
-          = image_tag '/assets/pict/google-play-badge.png', class: "google"
+      = link_to '#' do
+        = image_tag asset_path('pict/app.svg'), class: "app"
+      = link_to '#' do
+        = image_tag asset_path('pict/google-play-badge.png'), class: "google"
+
+
 .footer
   %ul.contents
     %li.content
       %h2.content__head FURIMAについて
       %ul
         %li
-          = link_to '#' , class: "No9-link" do
+          = link_to '#' do
             会社概要(運営会社)
         %li
-          = link_to '#' , class: "No9-link" do
+          = link_to '#' do
             プライバシーポリシー
         %li
-          = link_to '#' , class: "No9-link" do
+          = link_to '#' do
             FURIMA利用規約
         %li
-          = link_to '#' , class: "No9-link" do
+          = link_to '#' do
             ポイントに関する特約
     %li.content
       %h2.content__head FURIMAを見る
       %ul
         %li
-          = link_to '#' , class: "No9-link" do
+          = link_to '#' do
             カテゴリー一覧
         %li
-          = link_to '#' , class: "No9-link" do
+          = link_to '#' do
             ブランド一覧
     %li.content
       %h2.content__head ヘルプ＆ガイド
       %ul
         %li
-          = link_to '#' , class: "No9-link" do
+          = link_to '#' do
             FURIMAガイド
         %li
-          = link_to '#' , class: "No9-link" do
+          = link_to '#' do
             FURIMAロゴ利用ガイドライン
         %li
-          = link_to '#' , class: "No9-link" do
+          = link_to '#' do
             お知らせ
   .footer__logo
-    = link_to '#' , class: "No2-link" do
-      = image_tag '/assets/logo/logo-white.png'
-
+    = link_to '#' do
+      = image_tag asset_path('logo/logo-white.png')
   %p © FURIMA
 
-= link_to '#' , class: "No11-link" do
+= link_to '#' do
   .purchaseBtn
     %span.purchaseBtn__text 出品する
-    = image_tag asset_path('icon/icon_camera.png'), class: "purchaseBtn__icon" 
-
--# = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
+    = image_tag asset_path('icon/icon_camera.png'), class: "purchaseBtn__icon"

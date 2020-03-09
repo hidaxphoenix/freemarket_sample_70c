@@ -2,14 +2,13 @@ body{
   background: #f5f5f5;
   width: 100%;
 }
-header{
+.user_header{
   height: 128px;
   text-align: center;
 }
-.logo img{
+.user_logo img{
   width: 185px;
-  height: 45px;
-  padding: 40px;
+  padding-top: 40px;
 }
 .sign{
   height: 400px;
@@ -34,11 +33,14 @@ header{
     margin: 0 auto;
     text-align: start;
     span{
-      background-color: #ea352d;;
+      background-color: #ea352d;
       color: white;
       font-size: 14px;
       padding: 2px 4px;
       border-radius: 3px;
+      .form-any{
+        background-color: gray;
+      }
     }
     .field{
       padding: 20px;
@@ -52,16 +54,16 @@ header{
         height: 35px;
         border-radius: 5px;
       }
-      #birthday_birthday_1i{
+      #user_birthday_1i{
         width: 100px;
         height: 30px;
       }
-      #birthday_birthday_2i{
+      #user_birthday_2i{
         width: 100px;
         height: 30px;
         margin-left: 5px;
       }
-      #birthday_birthday_3i{
+      #user_birthday_3i{
         width: 100px;
         height: 30px;
         margin-left: 5px;
@@ -112,7 +114,7 @@ header{
   height: 220px;
   margin: 0 auto;
   z-index: 1;
-  height: 250px;
+  height: 260px;
   text-align: center;
   &__text{
     padding: 40px;
@@ -128,7 +130,6 @@ header{
     img{
       padding: 20px;
       width: 150px;
-      height: 50px;
     }
   }
 }

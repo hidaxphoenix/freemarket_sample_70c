@@ -1,0 +1,45 @@
+%header.user_header
+  = render "items/header"
+
+.sign-up
+  .sign-up__text
+  %h2 商品送付先住所
+  .sign-up__input
+    = form_for(@address, url: addresses_path, method: :post) do |f|
+      = render "devise/shared/error_messages", resource: @address
+      .field
+        = f.label :郵便番号
+        %span 必須
+        %br/
+        = f.text_field :postcode
+      .field
+        = f.label :都道府県
+        %span 必須
+        %br/
+        = f.text_field :address_prefecture
+      .field
+        = f.label :市区町村
+        %span 必須
+        %br/
+        = f.text_field :address_city
+      .field
+        = f.label :番地
+        %span 必須
+        %br/
+        = f.text_field :address_block
+      .field
+        = f.label :マンション名
+        %span 必須
+        %br/
+        = f.text_field :address_building
+      .field
+        = f.label :お届け先の電話番号
+        %span.form-any 任意
+        %br/
+        = f.text_field :buy_tell
+      .actions
+        = f.submit "新規登録"
+    = render "devise/shared/links"
+  
+%footer.bottom
+  = render "items/footer"
