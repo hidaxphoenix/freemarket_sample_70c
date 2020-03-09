@@ -1,0 +1,181 @@
+.ItemConfirmWrapper{
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  height: 100vh;
+  width: 100%;
+  background-color: rgb(245, 245, 245);
+  overflow: scroll;
+  .header{
+    height: 128px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__img{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .header-image{
+        height: 49px;
+        width: 185px;
+      }
+    }
+  }
+  .main-confirm{
+    .wrapper{
+      height: 100%;
+      width: 700px;
+      background-color: white;
+      margin: 0 auto;
+
+      &__topbox{
+        font-size: 22px;
+        padding: 32px;
+        text-align: center;
+        border-bottom: 0.05rem  solid rgb(245, 245, 245);
+        line-height: 1.5;
+        font-weight: 700;
+      }
+      &__middlebox{
+        padding: 32px 16px;
+        border-bottom: 0.05rem  solid rgb(245, 245, 245);
+
+        &__inner{
+          max-width: 343px;
+          margin: 0 auto;
+          &__item{
+            display: flex;
+            &__img{
+              height: 80px;
+              width: 80px;
+              background-color: gray;
+            }
+            &__text{
+              margin-left: 16px;
+              &__top{
+                font-size: 14px;
+                margin: 0;
+                padding: 0 0 8px;
+                line-height: 1.5;
+                text-align: left;
+                overflow-wrap: break-word;
+
+                width:247px;
+              }
+              &__bottom{
+                margin: 0;
+                text-align: left;
+                .itemPrice{
+                  font-size: 15px;
+
+                }
+                .itemTax{
+                  font-size: 12px;
+                }
+              }
+            }
+          }
+        }
+      }
+      &__bottombox{
+        width: 668px;
+        padding-top: 32px;
+        padding-bottom: 48px;
+        padding-left: 16px;
+        padding-right: 16px;
+        &__inner{
+          max-width: 343px;
+          margin: 0 auto;
+          &__form{
+            &__price{
+              &__box{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                &__buyPriceLavel{
+                  font-size: 18px;                 
+                }
+                &__buyPrice{
+                  font-size: 30px;
+                }
+              }
+            }
+            &__point{
+              margin-top: 24px;
+              border-bottom: 0.05rem  solid rgb(245, 245, 245);
+              padding-bottom: 32px;
+              &__box{
+                display: flex;
+                &__icon{
+                  height: 20px;
+                  width: 20px;
+                  background-color: #888888;
+                }
+                &__text{
+                  position: relative;
+                  z-index: 2;
+                  padding: 0 0 0 10px;
+                  font-size: 14px;
+                  font-weight: 400;
+                  vertical-align: middle;
+                  color: #888888;
+                }
+              }
+            }
+            &__payMethod{
+              padding: 32px 0;
+              border-bottom: 0.05rem  solid rgb(245, 245, 245);
+
+              &__box{
+                &__subject{
+                  font-size: 14px;
+                  font-weight: 700;
+                }
+                &__select{
+                  margin: 8px 0 0;
+                  font-size: 14px;
+                  color: rgb(0, 153, 232);
+                }
+              }
+            }
+            &__recive{
+              padding: 32px 0;
+              border-bottom: 0.05rem  solid rgb(245, 245, 245);
+              &__box{
+                &__subject{
+                  font-size: 14px;
+                  font-weight: 700;
+                }
+                &__select{
+                  margin: 8px 0 0;
+                  font-size: 14px;
+                  color: rgb(0, 153, 232);
+                }
+              }
+            }
+            &__submit{
+              padding-top: 32px;
+              &__box{
+                #backbutton{
+                  background-color: red;
+                  color: white;
+                  font-size: 17px;
+                  margin-bottom: 24px;
+                  height: 46px;
+                  width: 100%;
+                  border-radius: 6px;
+                  cursor: pointer;
+                  font-weight: 600;
+                }
+                #backbutton:hover{
+                  background: #b60202;
+                  color: white;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
