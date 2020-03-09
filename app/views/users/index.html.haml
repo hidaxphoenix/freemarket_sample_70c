@@ -5,9 +5,9 @@
         = link_to '#' , class: "No2-link" do
           =image_tag '/assets/logo/logo.png', class: "image1"
       .searchBox
-        %form{:action => "#", class: "form"}
+        %form{action: "#", class: "form"}
           %input{class: "searchBox--input", placeholder: "何かお探しですか？", class: "input"}
-          %button{:type => "submit"}
+          %button{type: "submit"}
             .searchBox__icon
               = image_tag '/assets/icon/icon-search 1.png', class: "image2"
     .nav-box
@@ -274,11 +274,10 @@
             %i.icon-right
               %i.fa.fa-chevron-right
         %li
-          = link_to "#", class: "m-nav-list-item" do
+          = link_to destroy_user_session_path, method: :delete, class: "m-nav-list-item" do
             ログアウト
             %i.icon-right
               %i.fa.fa-chevron-right
-
 
 
 %aside.banner
