@@ -3,13 +3,13 @@
     .main-header
       %h1.icon
         = link_to '#' do
-          =image_tag '/assets/logo/logo.png', class: "image1"
+          =image_tag asset_path('logo/logo.png'), class: "image1"
       .searchBox
         %form{:action => "#", class: "form"}
           %input{class: "searchBox--input", placeholder: "キーワードから検索", class: "input"}
           %button{:type => "submit"}
             .searchBox__icon
-              = image_tag '/assets/icon/icon-search 1.png', class: "image2"
+              = image_tag asset_path('icon/icon-search 1.png'), class: "image2"
     .nav
       %ul.listleft
         %li.listleft__category
@@ -21,10 +21,10 @@
 
       %ul.listright
         %li.listright__login
-          = link_to '#' do
+          = link_to '#', class:"aaa" do
             ログイン
         %li.listright__new
-          = link_to '#' do
+          = link_to '#', class:"aaa" do
             新規会員登録
 
 
@@ -182,9 +182,9 @@
     %p.inner__text 今すぐ無料ダウンロード!
     .inner__icon
       = link_to '#' do
-        = image_tag '/assets/pict/app.svg', class: "app"
+        = image_tag asset_path('pict/app.svg'), class: "app"
       = link_to '#' do
-        = image_tag '/assets/pict/google-play-badge.png', class: "google"
+        = image_tag asset_path('pict/google-play-badge.png'), class: "google"
 
 
 .footer
@@ -227,11 +227,11 @@
             お知らせ
   .footer__logo
     = link_to '#' do
-      = image_tag '/assets/logo/logo-white.png'
+      = image_tag asset_path('logo/logo-white.png')
   %p © FURIMA
 
 = link_to '#' do
   .purchaseBtn
     %span.purchaseBtn__text 出品する
-    = image_tag '/assets/icon/icon_camera.png', class: "purchaseBtn__icon"
+    = image_tag asset_path('icon/icon_camera.png'), class: "purchaseBtn__icon"
 
