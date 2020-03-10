@@ -1,7 +1,6 @@
 %header.top-header
   = render "items/index-header"
 
-
 %nav.steps
   %ul.step-contents
     %li.step-content
@@ -24,10 +23,6 @@
       %p.last-step
         product3
 
-
-
-
-
 .main
   .show-main
     .content-left-hide
@@ -39,14 +34,14 @@
           .itembox__body
             %ul.up
               %li.up-pic
-                %img{ src:'/assets/pict/product1.png'}
-                  %ul.low
-                    %li.low-pic
-                      %img{ src:'/assets/pict/product1.png'}
-                    %li.low-pic
-                      %img{ src:'/assets/pict/product3.png'}
-                    %li.low-pic
-                      %img{ src:'/assets/pict/product4.png'}
+                = image_tag asset_path('pict/product1.png')
+            %ul.low
+              %li.low-pic
+                = image_tag asset_path('pict/product1.png')
+              %li.low-pic
+                = image_tag asset_path('pict/product3.png')
+              %li.low-pic
+                = image_tag asset_path('pict/product4.png')
           .itemBox__price
             %span.price
               ¥30,000
@@ -55,8 +50,6 @@
                 (税込)
               %span
                 送料込み
-
-
 
             .item-detail
               product3
@@ -107,7 +100,6 @@
                     %td
                       4-7日で発送
 
-
             .optional-area
               %ul.option-list
                 %li.optional-btn-likebtn
@@ -148,8 +140,6 @@
         = link_to "#", class: "more-search" do
           ベビー・キッズをもっと見る
 
-
-
 %aside.banner
   .inner
     %h2.inner__title だれでもかんたん、人生を変えるフリマアプリ
@@ -159,7 +149,6 @@
         = image_tag asset_path('pict/app.svg'), class: "app"
       = link_to '#' do
         = image_tag asset_path('pict/google-play-badge.png'), class: "google"
-
 
 %footer.footer
   = render "items/index-footer"
