@@ -11,6 +11,7 @@ class ItemsController < ApplicationController
     item = Item.new(item_params)
     if item.save
       redirect_to root_path, notice: '出品が完了しました'
+    end
   end
 
   def show
