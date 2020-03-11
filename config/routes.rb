@@ -11,4 +11,5 @@ Rails.application.routes.draw do
     collection {get "confirm"}
       resources :items, only: [:show]
   end
+  resources :users
 end
