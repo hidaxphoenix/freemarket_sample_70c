@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_one :address
   accepts_nested_attributes_for :address
+  has_many :items
 
   validates :nickname, :phone, :birthday, presence: true
   validates :first_name, :last_name, format: { with: /\A[ぁ-んァ-ン一-龥]/ }
