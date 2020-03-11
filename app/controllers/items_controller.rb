@@ -7,6 +7,9 @@ class ItemsController < ApplicationController
     @item = Item.new
     @item.images.new
     @parents = Category.where(ancestry: nil)
+
+    @children = Category.find_by(name: "メンズ").children
+
    
   end
 
@@ -28,6 +31,16 @@ class ItemsController < ApplicationController
   def confirm
 
   end
+
+  def search
+    respond_to do |format|
+      format.html
+      format.json do
+      end
+    end
+  end
+  
+
 
   def get_category_children
     @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children

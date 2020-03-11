@@ -64,12 +64,9 @@
                 必須
             .main__box__detail__category__form
               .main__box__detail__category__form__box
-                -# = form.fields_for :categories do |category|
-                  -# - @parents.each do |parent|
-                -# =form.collection_select :name, @parents, :name, :name, { prompt: '---'}
-                -# = form.collection_select :category_id, @parents, :id, :name,{prompt: "---"}, class: "select-default", id: "parent-form", name: 'item[category_ids][]'
                 = form.collection_select(:category_id, @parents, :id, :name, {prompt: "---"})
-    
+                -# - @children.each do |child|
+                -#   =child.name
             
 
           .main__box__detail__bland

@@ -11,11 +11,16 @@ Rails.application.routes.draw do
 
     collection {get "confirm"}
       resources :items, only: [:show]
+
+
+    collection {get "search"}
+      resources :items, only: [:new]
+
     collection do
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
-
+      
     end
-  
+
   end
 end
