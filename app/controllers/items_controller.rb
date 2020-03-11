@@ -1,8 +1,10 @@
 class ItemsController < ApplicationController
   def index
+    @items = Item.includes(:user)
   end
 
   def new
+
     
     @item = Item.new
     @item.images.new
@@ -22,10 +24,19 @@ class ItemsController < ApplicationController
 	    redirect_to new_item_path  #itemをセーブできなかった時
     end
     
+
   end
 
   def show
+    @items = Items.find(params[:id])
+  end
 
+  def edit
+    
+  end
+
+  def destroy
+    
   end
 
   def confirm

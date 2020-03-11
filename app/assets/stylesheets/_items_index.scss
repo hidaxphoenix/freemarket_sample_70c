@@ -175,6 +175,43 @@ img{
           }
         }
       }
+      .right{
+        float: right;
+        margin-left: auto;
+        ul{
+          font-size: $zero;
+          height: $perfect;
+          display: flex;
+          li{
+            cursor: pointer;
+            padding: #{$zero} 14px;
+            .No2-link{
+              color: #333;
+              display: block;
+              i{
+                font-size: 25px;
+                width: $thirty;
+                color: #ccc;
+              }
+              .face-profile{
+                border-radius: 50%;
+                // margin-bottom: 20px;
+                width: 35px;
+                height: 35px;
+              }
+              span{
+                font-size: $font-size;
+                vertical-align: 4px;
+                margin-left: 6px;
+              }
+              .mypage-link{
+                vertical-align: 12px;
+                margin-left: $font-size;
+              }
+            }
+          }
+        }
+      }
       .listright{
         margin-left: auto;
         display: flex;
