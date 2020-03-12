@@ -14,21 +14,20 @@
                 必須
           .main__box__image__description
             最大10枚までアップロードできます
-          .main__box__image__form
-            .main__box__image__form__in
-              .main__box__image__form__in__box
-                = form.fields_for :images do |image|
-                  =image.file_field :image
-              -# = form.fields_for :images do |image|
-              -#   =image.file_field :image
-                  
-
-                .main__box__image__form__in__box__text
-                  .main__box__image__form__in__box__text__icon
-                    %i.fas.fa-camera
-                  .main__box__image__form__in__box__text__sentence
-                    ドラッグアンドドロップ<br>またはクリックしてまたはクリックしてファイルをアップロード
-
+          #image-box-1
+            .item-num-0#image-box__container
+              .main__box__image__form__in
+                .main__box__image__form__in__box
+                  = form.fields_for :images do |image|
+                    -# .input_area
+                    = image.file_field :image, type: 'file', name: "item[images_attributes][][image]", value:"", style: "display:none", id:"img-file"
+                    
+                  .main__box__image__form__in__box__text
+                    .main__box__image__form__in__box__text__icon
+                      %label{for: "img-file"}
+                        %i.fas.fa-camera
+                    .main__box__image__form__in__box__text__sentence
+                      ドラッグアンドドロップ<br>またはクリックしてまたはクリックしてファイルをアップロード
 
 
         .main__box__NameAndDescripution
