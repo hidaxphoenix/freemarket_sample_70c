@@ -160,7 +160,7 @@
 
       }
       &__NameAndDescripution{
-        height: 336px;
+        height: 345px;
         border-top: 0.05rem  solid rgb(245, 245, 245);
         border-bottom: 0.05rem  solid rgb(245, 245, 245);
         &__itemname{
@@ -226,6 +226,9 @@
               display: inline-block;
               position: relative;
               width: inherit;
+              .remaining-counter{
+                color: black;
+              }
               textarea{
                 border: 1px solid #ccc;
                 border-radius: 4px;
