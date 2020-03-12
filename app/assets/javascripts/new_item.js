@@ -22,7 +22,7 @@ $(function(){
       var num = $('.item-image').length + 1 + i
       fileReader.readAsDataURL(file);
 　　　 //画像が10枚になったら超えたらドロップボックスを削除する
-      if (num == 5){
+      if (num == 10){
         $('#image-box__container').css('display', 'none')   
       }
       //読み込みが完了すると、srcにfileのURLを格納
@@ -39,10 +39,10 @@ $(function(){
                     </div>
                   </div>`
         //image_box__container要素の前にhtmlを差し込む
-        $('#image-box__container').before(html);
+        $('#image-box-1').before(html);
       };
       //image-box__containerのクラスを変更し、CSSでドロップボックスの大きさを変えてやる。
-      $('#image-box__container').attr('class', `item-num-${num}`)
+      $('#image-box-1').attr('class', `item-num-${num}`)
     });
   });
   var dropArea = document.getElementById("image-box-1");
@@ -78,7 +78,7 @@ $(function(){
         //指定されたファイルを読み込む
         fileReader.readAsDataURL(file);
         // 10枚プレビューを出したらドロップボックスが消える
-        if (num==5){
+        if (num==10){
           $('#image-box__container').css('display', 'none')   
         }
         //image fileがロードされた時に発火するイベント
@@ -96,16 +96,16 @@ $(function(){
                       </div>
                     </div>`
         //image-box__containerの前にhtmlオブジェクトを追加　
-        $('#image-box__container').before(html);
+        $('#image-box-1').before(html);
         };
         //image-box__containerにitem-num-(変数)という名前のクラスを追加する
-        $('#image-box__container').attr('class', `item-num-${num}`)
+        $('#image-box-1').attr('class', `item-num-${num}`)
       })
     })
   }
 
   //削除ボタンをクリックすると発火するイベント
-  $(document).on("click", '.item-image__operetion--delete', function(){
+  $(document).on("click", '.image-text-delete', function(){
     //削除を押されたプレビュー要素を取得
     var target_image = $(this).parent().parent()
     //削除を押されたプレビューimageのfile名を取得
