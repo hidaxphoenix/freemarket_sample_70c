@@ -48,13 +48,11 @@
                 必須
             .main__box__NameAndDescripution__itemDescription__form
               .main__box__NameAndDescripution__itemDescription__form__box
-                -# #textCount 0 
-                -# %span.remaining-counter 文字入力しました。
-                #textLest 1000
-                %span.remaining-counter 文字入力できます。
-                -# #textAttention 入力文字数が多すぎます。
-                =form.text_area :description, {id: "textArea", cols:"40", rows:"15", placeholder: '商品の説明 (必須 1,000字以内)\n (色、素材、、素材、重さ、、素材、重さ、定価、注意点など)\n\n例)2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでおすすめです。'}
-                
+                =form.text_area :description, {placeholder: '商品の説明 (必須 1,000字以内)\n (色、素材、、素材、重さ、、素材、重さ、定価、注意点など)\n\n例)2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでおすすめです。'}
+                -# %textarea{:placeholder => "商品の説明 (必須 1,000字以内)\n (色、素材、、素材、重さ、、素材、重さ、定価、注意点など)\n\n例)2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでおすすめです。"}
+                  
+            .main__box__NameAndDescripution__itemDescription__count
+              0/1000
 
         .main__box__detail
           .main__box__detail__text
@@ -66,7 +64,7 @@
                 必須
             .main__box__detail__category__form
               .main__box__detail__category__form__box
-                = form.select :category, @category_parent_array, {:prompt => "---" }, {class: 'listing-select-wrapper__box--select', id: 'parent_category', name:""} # @category_parent_arrayには、parent.nameが入っている。
+                -# = form.select :category, @category_parent_array, {:prompt => "---" }, {class: 'listing-select-wrapper__box--select', id: 'parent_category', name:""} # @category_parent_arrayには、parent.nameが入っている。
                 // @category_parent_arrayの内容を選択肢に表示
 
           .main__box__detail__bland
@@ -85,9 +83,6 @@
             .main__box__detail__status__form
               .main__box__detail__status__form__box
                 %select
-
-
-
 
         .main__box__delivery
           .main__box__delivery__text 配送について
@@ -119,11 +114,6 @@
                 .main__box__delivery__day__form__box
                   = form.select :ship_date, Item.ship_dates, {}, {class: 'itemnameform'}
               
-
-
-
-
-
         .main__box__price
           .main__box__price__text
             価格 (¥300~9,999,999)
@@ -153,14 +143,10 @@
 
         .main__box__PriceAndButton
           .main__box__PriceAndButton__red
-            =form.submit '出品する', class: 'redbutton'
+            =form.submit '変更する', class: 'redbutton'
           
           .main__box__PriceAndButton__gray
             %input#graybutton{type: "submit", value: "もどる"}
-      
-
-        
-      .main__box__important
-        禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
+  
   %footer.bottom
     = render "items/footer"
