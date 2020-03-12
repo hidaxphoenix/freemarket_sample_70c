@@ -56,9 +56,9 @@
             width: 100%;
             height: 100px;
           }
-          .item-image__operetion{
+          &__operetion{
             border: outset;
-            .item-image__operetion--delete{
+            .image-text-delete{
               color: red;
               text-align: center;
             }

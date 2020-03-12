@@ -35,7 +35,7 @@ $(function(){
                       </div>
                     </div>
                     <div class='item-image__operetion'>
-                      <div class='item-image__operetion--delete'>削除</div>
+                      <div class='image-text-delete'>削除</div>
                     </div>
                   </div>`
         //image_box__container要素の前にhtmlを差し込む
@@ -92,7 +92,7 @@ $(function(){
                         </div>
                       </div>
                       <div class='item-image__operetion'>
-                        <div class='item-image__operetion--delete'>削除</div>
+                        <div class='image-text-delete'>削除</div>
                       </div>
                     </div>`
         //image-box__containerの前にhtmlオブジェクトを追加　
