@@ -14,21 +14,20 @@
                 必須
           .main__box__image__description
             最大10枚までアップロードできます
-          .main__box__image__form
-            .main__box__image__form__in
-              .main__box__image__form__in__box
-                = form.fields_for :images do |image|
-                  =image.file_field :image
-              -# = form.fields_for :images do |image|
-              -#   =image.file_field :image
-                  
-
-                .main__box__image__form__in__box__text
-                  .main__box__image__form__in__box__text__icon
-                    %i.fas.fa-camera
-                  .main__box__image__form__in__box__text__sentence
-                    ドラッグアンドドロップ<br>またはクリックしてまたはクリックしてファイルをアップロード
-
+          #image-box-1
+            .item-num-0#image-box__container
+              .main__box__image__form__in
+                .main__box__image__form__in__box
+                  = form.fields_for :images do |image|
+                    -# .input_area
+                    = image.file_field :image, type: 'file', name: "item[images_attributes][][image]", value:"", style: "display:none", id:"img-file"
+                    
+                  .main__box__image__form__in__box__text
+                    .main__box__image__form__in__box__text__icon
+                      %label{for: "img-file"}
+                        %i.fas.fa-camera
+                    .main__box__image__form__in__box__text__sentence
+                      ドラッグアンドドロップ<br>またはクリックしてまたはクリックしてファイルをアップロード
 
 
         .main__box__NameAndDescripution
@@ -65,7 +64,7 @@
                 必須
             .main__box__detail__category__form
               .main__box__detail__category__form__box
-                = form.select :category, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category', name:""} # @category_parent_arrayには、parent.nameが入っている。
+                = form.select :category, @category_parent_array, {:prompt => "---" }, {class: 'listing-select-wrapper__box--select', id: 'parent_category', name:""} # @category_parent_arrayには、parent.nameが入っている。
                 // @category_parent_arrayの内容を選択肢に表示
 
           .main__box__detail__bland
@@ -84,43 +83,43 @@
             .main__box__detail__status__form
               .main__box__detail__status__form__box
                 %select
+
+
+
+
         .main__box__delivery
-          .main__box__delivery__text
-            配送について
+          .main__box__delivery__text 配送について
+          = link_to '#', class: 'listing-product-help' do
+            ?
           .main__box__delivery__fee
             .main__box__delivery__fee__text
-              配送料の負担
-              %span
-                必須
-            .main__box__delivery__fee__form
-              .main__box__delivery__fee__form__box
-                = form.text_field :ship_charge, {placeholder:  '40文字まで',class: 'itemnameform'}
+              = form.label '配送料の負担', class: 'listing-default__label' 
+              %span 必須
+              .main__box__delivery__fee__form
+                .main__box__delivery__fee__form__box
+                  = form.select :ship_charge, Item.ship_charges, {}, {class: 'itemnameform',id:"ship_charge"}
+                  
+          .listing-product-delivery-charge-burden
                 
           .main__box__delivery__area
-            .main__box__delivery__area__text
-              発送先の地域
-              %span
-                必須
+            .main__box__delivery__area__text 発送先の地域
+            %span 必須
             .main__box__delivery__area__form
               .main__box__delivery__area__form__box
-                = form.text_field :ship_area, {placeholder:  '40文字まで',class: 'itemnameform'}
-            .main__box__delivery__area__text
-              発送先の地域
-              %span
-                必須
-            .main__box__delivery__area__form
-              .main__box__delivery__area__form__box
-                = form.text_field :ship_method, {placeholder:  '40文字まで',class: 'itemnameform'}
-
+                = form.select :ship_area, Item.ship_areas, {}, {class: 'itemnameform'}
 
           .main__box__delivery__day
-            .main__box__delivery__day__text
-              発送までの日数
-              %span
-                必須
+            .main__box__delivery__day__text 発送までの日数
+            %span 必須
             .main__box__delivery__day__form
               .main__box__delivery__day__form__box
-                = form.text_field :ship_date, {placeholder:  '40文字まで',class: 'itemnameform'}
+                = form.select :ship_date, Item.ship_dates, {}, {class: 'itemnameform'}
+              
+
+
+
+
+
         .main__box__price
           .main__box__price__text
             価格 (¥300~9,999,999)
