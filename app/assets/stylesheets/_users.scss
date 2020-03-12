@@ -247,7 +247,7 @@ i{
 .mypage-main{
   margin: 40px auto 0;
   width: 1020px;
-  height: 1400px;
+  height: 1480px;
   .m-side{
     float: left;
     width: 280px;
@@ -296,6 +296,8 @@ i{
     }
     .m-nav-head{
       margin: 40px 0 0;
+      padding-bottom: 5px;
+      font-weight: bold;
     }
   }
   .m-content{

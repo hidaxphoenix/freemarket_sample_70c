@@ -1,3 +1,11 @@
-%h2 登録が完了しました
-= link_to root_path do
-  トップへ戻る
+%header.user_header
+  = render "items/header"
+
+.user_done
+  .user_box
+    %h2 登録が完了しました。
+    = link_to root_path do
+      トップへ戻る
+
+%footer.bottom
+  = render "items/footer"
