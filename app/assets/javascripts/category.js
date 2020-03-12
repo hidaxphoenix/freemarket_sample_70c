@@ -52,8 +52,6 @@ $(function(){
       .done(function(children){  //childrenの中には、選ばれた親カテゴリの中の小カテゴリが入っている
         $('#children_wrapper').remove(); //親が変更された時、子以下を削除するする
         $('#grandchildren_wrapper').remove();
-        // $('#size_wrapper').remove();
-        // $('#brand_wrapper').remove();
         var insertHTML = '';
         children.forEach(function(child){  //childには、子カテゴリのidとnameが入っている
           insertHTML += appendOption(child);   
