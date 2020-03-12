@@ -8,5 +8,6 @@ class Item < ApplicationRecord
   # accepts_nested_attributes_for :trade
   # accepts_nested_attributes_for :category
   accepts_nested_attributes_for :images, allow_destroy: true
+  # accepts_nested_attributes_for :categories
 
 end

@@ -9,12 +9,9 @@ Rails.application.routes.draw do
   root 'items#index'
   resources :items do
 
-    collection {get "confirm"}
-      resources :items, only: [:show]
-
-
-    collection {get "search"}
-      resources :items, only: [:new]
+    # collection {get "confirm"} do
+    #   resources :items, only: [:show]
+    # end
 
     collection do
       get 'get_category_children', defaults: { format: 'json' }
