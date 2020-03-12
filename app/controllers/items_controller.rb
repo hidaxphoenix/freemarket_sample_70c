@@ -61,6 +61,10 @@ class ItemsController < ApplicationController
       @category_grandchildren = Category.find("#{params[:child_id]}").children
   end
 
+  def get_delivery_method
+    
+  end
+
 
   private
 
