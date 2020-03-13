@@ -434,6 +434,30 @@
             }
           }
         }
+        .listing-product-delivery-charge-burden{
+          height: auto;
+          font-size: 14px;
+          font-weight: 600;
+          margin-top: 35px;
+          .lisiting-default__label{
+
+          }
+          .listing-default--require{
+            font-size: 12px;
+            margin: 8px;
+            padding: 0px 4px;
+            background-color: red;
+            color: white;
+            border-radius: 2px;
+          }
+          .listing-select-wrapper__box{
+            height: 46px;
+            select{
+              height: 100%;
+              width: 100%;
+            }
+          }
+        }
         &__area{
           margin-top: 32px;
           &__text{
