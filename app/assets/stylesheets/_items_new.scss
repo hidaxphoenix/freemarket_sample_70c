@@ -521,6 +521,13 @@
           padding-top: 40px;
         }
         &__value{
+          &__alert{
+            color: red;
+            font-size: 14px;
+            display: flex;
+            justify-content: flex-end;
+          }
+
           &__wrapper{
             display: flex;
             justify-content: space-between;
