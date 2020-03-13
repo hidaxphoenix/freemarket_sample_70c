@@ -88,6 +88,10 @@
             = link_to item_path(item.id), class:"aaa" do
               %figure.productList--img
                 = image_tag item.images.first.image.url
+                -if item.user_id.present? 
+                  .items-box_photo__sold
+                    .items-box_photo__sold__inner
+                      SOLD
               .product--body
                 %h3.name 
                   = item.name
