@@ -515,10 +515,10 @@ img{
 }
 
 .banner{
-  // background-image: image-url("pict/bg-appBanner-pict.jpg");
-  // padding: $hundred $forty;
-  // position: relative;
-  // background-size: cover;
+  background-image: image-url("pict/bg-appBanner-pict.jpg");
+  padding: $hundred $forty;
+  position: relative;
+  background-size: cover;
   background-position: $center;
   .inner{
     color: #fff;
