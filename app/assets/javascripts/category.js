@@ -40,11 +40,14 @@ $(function(){
 
 
   // 親カテゴリー選択後のイベント
+  //親カテゴリーの値が変更されたら発火
   $('#parent_category').on('change', function(){
-    var parentCategory = document.getElementById('parent_category').value; //選択された親カテゴリーの名前を取得
-    if (parentCategory != "---"){ //親カテゴリーが初期値でないことを確認
+    //選択された親カテゴリーの名前(内容)を.valueで取得
+    var parentCategory = document.getElementById('parent_category').value;
+    //親カテゴリーが初期値でないことを確認
+    if (parentCategory != "---"){
       $.ajax({
-        url: 'get_category_children',   //items_controllerのメソッド
+        url: 'get_category_children',   //items_controllerのメソッドへ
         type: 'GET',
         data: { parent_name: parentCategory },
         dataType: 'json'
