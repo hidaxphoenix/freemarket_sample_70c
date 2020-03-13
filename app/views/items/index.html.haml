@@ -84,94 +84,6 @@
           %h3.title 新規投稿商品
       .productLists
         .productList
-<<<<<<< Updated upstream
-          = link_to "/products/3", class:"aaa" do
-            %figure.productList--img
-              = image_tag asset_path('pict/product1.png')
-            .product--body
-              %h3.name product3
-              .details
-                %ul
-                  %li 30000円
-                  %li
-                    %i.fa.fa-star.likeIcon
-                    0
-                %p （税込）
-        .productList
-          = link_to "/products/2", class:"aaa" do
-            %figure.productList--img
-              = image_tag asset_path('pict/product2.png')
-            .product--body
-              %h3.name product2
-              .details
-                %ul
-                  %li 20000円
-                  %li
-                    %i.fa.fa-star
-                    0
-                %p （税込）
-        .productList
-          = link_to "/products/1", class:"aaa" do
-            %figure.productList--img
-              = image_tag asset_path('pict/product3.png')
-            .product--body
-              %h3.name product1
-              .details
-                %ul
-                  %li 10000円
-                  %li
-                    %i.fa.fa-star
-                    0
-                %p （税込）
-  .pickup-container
-    %h2.head ピックアップブランド
-    .productBox
-      .productHead
-        = link_to '#', class:"aaa" do
-          %h3.title アーカイバ
-      .productLists
-        .productList
-          = link_to "/products/3", class:"aaa" do
-            %figure.productList--img
-              = image_tag asset_path('pict/product1.png')
-            .product--body
-              %h3.name product3
-              .details
-                %ul
-                  %li 30000円
-                  %li
-                    %i.fa.fa-star
-                    0
-                %p （税込）
-        .productList
-          = link_to "/products/2", class:"aaa" do
-            %figure.productList--img
-              = image_tag asset_path('pict/product2.png')
-            .product--body
-              %h3.name product2
-              .details
-                %ul
-                  %li 20000円
-                  %li
-                    %i.fa.fa-star
-                    0
-                %p （税込）
-        .productList
-          = link_to "/products/1", class:"aaa" do
-            %figure.productList--img
-              = image_tag asset_path('pict/product3.png')
-            .product--body
-              %h3.name product1
-              .details
-                %ul
-                  %li 10000円
-                  %li
-                    %i.fa.fa-star
-                    0
-                %p （税込）
-
-.banner
-=======
           - @items.each do |item|
             = link_to item_path(item.id), class:"aaa" do
               %figure.productList--img
@@ -189,7 +101,6 @@
                   %p （税込）
 ​
 %aside.banner
->>>>>>> Stashed changes
   .inner
     %h2.inner__title だれでもかんたん、人生を変えるフリマアプリ
     %p.inner__text 今すぐ無料ダウンロード!
