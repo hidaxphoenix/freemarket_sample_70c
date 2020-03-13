@@ -1,0 +1,18 @@
+.productList
+- @items.each do |item|
+  =item.name
+
+  = link_to item_path(item.id), class:"aaa" do
+    %figure.productList--img
+      = image_tag item.images.first.image.url
+    .product--body
+      %h3.name 
+        = item.name
+      .details
+        %ul
+          %li 
+            = item.price 
+          %li
+            %i.fa.fa-star
+            0
+        %p （税込）

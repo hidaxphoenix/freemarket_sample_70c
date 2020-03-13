@@ -448,16 +448,15 @@ img{
       .productLists{
         width: 780px;
         margin:26px auto $zero auto;
-        display: flex;
-        justify-content: space-around;
         .productList{
-          width: 220px;
           display: inline-block;
-          float: left;
+          display: flex;
+          flex-wrap: wrap;
           .aaa{
             background-color: #fff;
             display: inline-block;
             text-decoration: none;
+            margin: 0 20px 80px 20px;
             .productList--img{
               width: 220px;
               height: 150px;

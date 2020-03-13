@@ -1,6 +1,9 @@
 class ItemsController < ApplicationController
+  
+
   def index
     @items = Item.includes(:user)
+    # @images = Image.all
   end
 
   def new
@@ -15,7 +18,8 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     if @item.save
 		  redirect_to root_path
-	  else
+    else
+      @items = Item.includes(:user)
 	    redirect_to new_item_path  #itemをセーブできなかった時
     end
     
@@ -23,7 +27,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @items = Items.find(params[:id])
+    @items = Item.find(params[:id])
   end
 
   def edit
@@ -69,7 +73,6 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:name, :description, :price, :ship_charge, :ship_area, :ship_date, :ship_method, :category_id, images_attributes: [:image]).merge(user_id: current_user.id).merge(category_id: params[:category_id])
-    
   end
 end
 
