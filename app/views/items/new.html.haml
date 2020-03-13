@@ -77,14 +77,17 @@
             .main__box__detail__bland__form
               .main__box__detail__bland__form__box
                 %input.blandform{:placeholder => "例) シャネル"}
+                
+
+
           .main__box__detail__status
             .main__box__detail__status__text
-              商品の状態
+              = form.label '商品の状態', class: 'listing-default__label' 
               %span
                 必須
             .main__box__detail__status__form
               .main__box__detail__status__form__box
-                %select
+                = form.select :condition, Item.conditions, {}, {class: 'itemnameform'}
 
 
 
@@ -119,10 +122,6 @@
                 .main__box__delivery__day__form__box
                   = form.select :ship_date, Item.ship_dates, {}, {class: 'itemnameform'}
               
-
-
-
-
 
         .main__box__price
           .main__box__price__text
