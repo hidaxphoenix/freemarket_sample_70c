@@ -584,14 +584,14 @@
               }
               &__input{
                 align-items: center;
-                display: inline-flex;
-                width: 100%;  
+                width: 100%; 
+
                 &__box{
                   width: 100%;
                   display: inline-block;
                   position: relative;
                   width: inherit;
-                  .priceform{
+                  #item_price{
                     border: 1px solid #ccc;
                     border-radius: 4px;
                     box-sizing: border-box;
@@ -601,11 +601,15 @@
                     margin: 0;
                     outline: none;
                     padding: 0 16px;
-                    width: inherit; 
+                    width: 280px;
                   }
-                  .priceform::placeholder{
+                  #item_price::placeholder{
                     text-align: right;
                   }
+                }
+                &__error{
+                  font-size: 14px;
+                  color: red;
                 }
               }
             }

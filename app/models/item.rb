@@ -5,6 +5,10 @@ class Item < ApplicationRecord
   has_many :images, dependent: :destroy
   # has_one :trade
 
+  validates :name,           length: { maximum: 40 }
+  validates :description,    length: { maximum: 1000 }
+
+
   # accepts_nested_attributes_for :trade
   accepts_nested_attributes_for :images, allow_destroy: true
   enum condition: {
