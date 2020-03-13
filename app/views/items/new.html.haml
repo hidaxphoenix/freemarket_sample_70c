@@ -53,7 +53,7 @@
                 #textLest 1000
                 %span.remaining-counter 文字入力できます。
                 -# #textAttention 入力文字数が多すぎます。
-                =form.text_area :description, {id: "textArea", cols:"40", rows:"15", placeholder: '商品の説明 (必須 1,000字以内)\n (色、素材、、素材、重さ、、素材、重さ、定価、注意点など)\n\n例)2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでおすすめです。'}
+                =form.text_area :description, {id: "textArea", cols:"40", rows:"15", placeholder: "商品の説明 (必須 1,000字以内)\n (色、素材、、素材、重さ、、素材、重さ、定価、注意点など)\n\n例)2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでおすすめです。"}
                 
 
         .main__box__detail
@@ -121,6 +121,7 @@
               .main__box__delivery__day__form
                 .main__box__delivery__day__form__box
                   = form.select :ship_date, Item.ship_dates, {}, {class: 'itemnameform'}
+                .main__box__delivery__day__form__alert
               
 
         .main__box__price
@@ -137,18 +138,19 @@
                   ¥
                 .main__box__price__value__wrapper__form__input
                   .main__box__price__value__wrapper__form__input__box
-                    = form.text_field :price, {placeholder: '0'}
+                    = form.number_field :price, {placeholder: '0'}
+                  .main__box__price__value__wrapper__form__input__error
 
             .main__box__price__value__commission
               .main__box__price__value__commission__text
                 販売手数料　(10%)
               .main__box__price__value__commission__result
-                100
+                = "---"
             .main__box__price__value__benefit
               .main__box__price__value__benefit__text
                 販売利益
               .main__box__price__value__benefit__result
-                110
+                = "---"
 
         .main__box__PriceAndButton
           .main__box__PriceAndButton__red
