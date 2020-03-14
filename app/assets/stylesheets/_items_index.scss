@@ -447,13 +447,14 @@ img{
         display: flex;
         justify-content: space-around;
         .productList{
-          width: 220px;
           display: inline-block;
           float: left;
+          text-align: center;
           .aaa{
             background-color: #fff;
             display: inline-block;
             text-decoration: none;
+            margin: 12px;
             .productList--img{
               width: 220px;
               height: 150px;
