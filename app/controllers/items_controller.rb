@@ -24,11 +24,19 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    
+    @item = Item.find_by(id: params[:id])
+  end
+
+  def update
+    item = Item.find_by(id: params[:id])
+    item.update(item_params)
+    redirect_to root_path
   end
 
   def destroy
-    
+    item = Item.find_by(id: params[:id])
+    item.destroy
+    redirect_to root_path
   end
 
   def confirm

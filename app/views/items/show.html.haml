@@ -38,10 +38,13 @@
                 = image_tag @item.images.first.image.to_s
             %ul.low
               %li.low-pic
+                -# = image_tag @item.images.first.image.to_s
                 = image_tag asset_path('pict/product1.png')
               %li.low-pic
+                -# = image_tag @item.images.first.image.to_s
                 = image_tag asset_path('pict/product3.png')
               %li.low-pic
+                -# = image_tag @item.images.first.image.to_s
                 = image_tag asset_path('pict/product4.png')
           .itemBox__price
             %span.price
@@ -117,7 +120,15 @@
                   = link_to "#", class: "flag" do
                     %i.fa.fa-flag
                       不適切な商品の通報
-
+          - if user_signed_in? && current_user.id == @item.user_id  
+            .edit_and_destroy        
+              .item_edit
+                = link_to edit_item_path, class: "item_edit_path" do
+                  商品の編集
+              %p or
+              .item_destroy
+                = link_to item_path, method: :delete, class: "item_destroy_path" do
+                  この商品を削除する
         .comment-box
           .comment-contents
             %textarea
