@@ -86,7 +86,7 @@
           - @items.each do |item|
             = link_to item_path(item.id), class:"aaa" do
               %figure.productList--img
-                -# = image_tag item.images.first.image.url
+                = image_tag item.images.first.image.url
               .product--body
                 %h3.name 
                   = item.name
