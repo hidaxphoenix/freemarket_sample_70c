@@ -1,4 +1,7 @@
 class ItemsController < ApplicationController
+
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
+
   def index
     @items = Item.includes(:user)
   end
@@ -20,15 +23,19 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
   end
 
   def edit
-    
+  end
+
+  def update
+    @item.update(item_params)
+    redirect_to root_path
   end
 
   def destroy
-    
+    @item.destroy
+    redirect_to root_path
   end
 
   def confirm
@@ -70,5 +77,10 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:name, :description, :price, :condition, :ship_charge, :ship_area, :ship_date, :ship_method, :category_id, images_attributes: [:image]).merge(user_id: current_user.id).merge(category_id: params[:category_id])
     
   end
+
+  def set_item
+    @item = Item.find(params[:id])
+  end
+
 end
 
