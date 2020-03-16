@@ -1,52 +1,6 @@
 %header.top-header
-  .headerinner
-    .main-header
-      %h1.icon
-        = link_to root_path , class: "No2-link" do
-          =image_tag '/assets/logo/logo.png', class: "image1"
-      .searchBox
-        %form{action: "#", class: "form"}
-          %input{class: "searchBox--input", placeholder: "何かお探しですか？", class: "input"}
-          %button{type: "submit"}
-            .searchBox__icon
-              = image_tag '/assets/icon/icon-search 1.png', class: "image2"
-    .nav
-      %nav.left
-        %ul.nav-v
-          %li
-            %h2
-              = link_to '#', class:"list-category" do
-                %i.c-icon
-                  = image_tag '/assets/icon/icon_category.png'
-                %span カテゴリーから探す
-          %li
-            %h2
-              = link_to '#', class:"list-category" do
-                %i.c-icon
-                  = image_tag '/assets/icon/icon_brand.png'
-                %span ブランドから探す
-      .right
-        %ul
-          %li
-            = link_to "#" , class: "No2-link" do
-              %i.bell
-                %i.far.fa-heart
-              %span いいね！一覧
-          %li
-            = link_to "#" , class: "No2-link" do
-              %i.bell
-                %i.fa.fa-bell
-              %span お知らせ
-          %li
-            = link_to "#" , class: "No2-link" do
-              %i.check
-                %i.fa.fa-check
-              %span やることリスト
-          %li
-            = link_to "#" , class: "No2-link" do
-              %i.icon
-                =image_tag '/assets/member_photo_noimage_thumb.png', class: "face-profile"
-              %span.mypage-link マイページ
+  = render "items/index-header"
+
 
 .information
   %ul
@@ -64,8 +18,9 @@
     .mypage-user
       = link_to "#", class: "user-face-action" do
         %figure
-          =image_tag '/assets/member_photo_noimage_thumb.png', class: "face-icon-opacy"
-        %h2.user-name あああああ
+          =image_tag asset_path('pict/member_photo_noimage_thumb.png'), class: "face-icon-opacy"
+        %h2.user-name 
+          = current_user.nickname
         .mypage-number
           %div
             評価
@@ -285,58 +240,16 @@
     %h2.inner__title だれでもかんたん、人生を変えるフリマアプリ
     %p.inner__text 今すぐ無料ダウンロード!
     .inner__icon
-      = link_to '#' , class: "No2-link" do
-        .aBtn
-          = image_tag '/assets/pict/app.svg', class: "app"
-      = link_to '#' , class: "No2-link" do
-        .gBtn
-          = image_tag '/assets/pict/google-play-badge.png', class: "google"
+      = link_to '#' do
+        = image_tag asset_path('pict/app.svg'), class: "app"
+      = link_to '#' do
+        = image_tag asset_path('pict/google-play-badge.png'), class: "google"
 
 
-.footer
-  %ul.contents
-    %li.content
-      %h2.content__head FURIMAについて
-      %ul
-        %li
-          = link_to '#' , class: "No9-link" do
-            会社概要(運営会社)
-        %li
-          = link_to '#' , class: "No9-link" do
-            プライバシーポリシー
-        %li
-          = link_to '#' , class: "No9-link" do
-            FURIMA利用規約
-        %li
-          = link_to '#' , class: "No9-link" do
-            ポイントに関する特約
-    %li.content
-      %h2.content__head FURIMAを見る
-      %ul
-        %li
-          = link_to '#' , class: "No9-link" do
-            カテゴリー一覧
-        %li
-          = link_to '#' , class: "No9-link" do
-            ブランド一覧
-    %li.content
-      %h2.content__head ヘルプ＆ガイド
-      %ul
-        %li
-          = link_to '#' , class: "No9-link" do
-            FURIMAガイド
-        %li
-          = link_to '#' , class: "No9-link" do
-            FURIMAロゴ利用ガイドライン
-        %li
-          = link_to '#' , class: "No9-link" do
-            お知らせ
-  .footer__logo
-    = link_to '#' , class: "No2-link" do
-      = image_tag '/assets/logo/logo-white.png'
-  %p © FURIMA
+%footer.footer
+  = render "items/index-footer"
 
-= link_to '#' , class: "No11-link" do
+= link_to new_item_path do
   .purchaseBtn
     %span.purchaseBtn__text 出品する
-    = image_tag '/assets/icon/icon_camera.png', class: "purchaseBtn__icon"
+    = image_tag asset_path('icon/icon_camera.png'), class: "purchaseBtn__icon"

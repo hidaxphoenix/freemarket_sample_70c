@@ -84,9 +84,9 @@
             .low-pic{
               width: 25%;
               margin: 0 10px 0 0;
-              img {
-                object-fit: cover;
-                height: 87px;
+              .low-pic-image {
+                height: 150px;
+                width: 150px;
               }
             }
           }
@@ -199,6 +199,47 @@
                 }
               }
             }
+          }
+        }
+        .edit_and_destroy{
+          text-align: center;
+          a{
+            text-decoration: none;
+            color: #000;
+          }
+          p{
+            text-align: center;
+            margin: 20px 0px;
+          }
+          .item_edit{
+            width: 100%;
+            height: 50px;
+            border-radius: 3px;
+            line-height: 50px;
+            background-color: #3CCACE;
+            a{
+              color: white;
+            }
+          }
+          .item_destroy{
+            width: 100%;
+            height: 50px;
+            background-color: gainsboro;
+            border-radius: 3px;
+            line-height: 50px;           
+          }
+        }
+        .item_confirm_path{
+          width: 100%;
+          height: 50px;
+          border-radius: 3px;
+          line-height: 50px;
+          background-color: #3CCACE;
+          text-align: center;
+          .confirm_link{
+            text-decoration: none;
+            color: white;
+            font-size: 24px;
           }
         }
       }
