@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_13_075111) do
+ActiveRecord::Schema.define(version: 2020_03_16_104003) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "postcode", null: false
@@ -67,6 +67,8 @@ ActiveRecord::Schema.define(version: 2020_03_13_075111) do
     t.datetime "updated_at", null: false
     t.bigint "category_id"
     t.string "condition"
+    t.bigint "saler_id"
+    t.bigint "buyer_id"
     t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["name"], name: "index_items_on_name"
     t.index ["user_id"], name: "index_items_on_user_id"
