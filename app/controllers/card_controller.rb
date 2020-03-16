@@ -4,7 +4,6 @@ class CardController < ApplicationController
   
   before_action :set_card,only: [:new, :pay, :delete, :show]
   def new
-    # card = Card.where(user_id: current_user.id).first
     redirect_to action: "show" if @card
   end
 
@@ -29,7 +28,6 @@ class CardController < ApplicationController
   end
 
   def delete #PayjpとCardデータベースを削除します
-    # card = Card.where(user_id: current_user.id).first
       Payjp.api_key = Rails.application.credentials.PAYJP_SECRET_KEY
       customer = Payjp::Customer.retrieve(@card.customer_id)
       customer.delete
@@ -38,7 +36,6 @@ class CardController < ApplicationController
   end
 
   def show #Cardのデータpayjpに送り情報を取り出します
-    # card = Card.where(user_id: current_user.id).first
     if @card.blank?
       redirect_to action: "new" 
     else
