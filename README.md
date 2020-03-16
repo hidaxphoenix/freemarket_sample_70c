@@ -55,6 +55,7 @@ has_many items
 |-------|-----|-------|
 |name|string|null: false, limit: 40|
 |description|text|null: false, limit: 1000|
+|condition|string|null: false|
 |price|integer|null: false|
 |ship_charge|string|null: false|
 |ship_area|string|null: false|
@@ -66,7 +67,7 @@ has_many items
 |image_id|integer|null: false,foreign_key: true|
 
 ### Association
-has_one conditions
+has_one condition
 belongs_to category
 belongs_to brand
 has_one user_trades
@@ -130,7 +131,7 @@ belongs_to  user
 belongs_to item
 
 
-##category
+### category
 
 |Column|Type|Option|
 |-------|-----|-------|

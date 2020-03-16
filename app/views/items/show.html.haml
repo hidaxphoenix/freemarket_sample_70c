@@ -4,24 +4,24 @@
 %nav.steps
   %ul.step-contents
     %li.step-content
-      = link_to "FURIMA", "#", class: "step-link" 
+      = link_to @item.name, "#", class: "step-link"
     %li.step-content
       %i.fa.fa-angle-right
     %li.step-content
-      = link_to "ベビー・キッズ", "#", class: "step-link" 
+      = link_to @item.category.root.name, "#", class: "step-link" 
     %li.step-content
       %i.fa.fa-angle-right
     %li.step-content
-      = link_to "ベビー服(男女兼用)  ~95cm", "#", class: "step-link" 
+      = link_to @item.category.parent.name, "#", class: "step-link" 
     %li.step-content
       %i.fa.fa-angle-right
     %li.step-content
-      = link_to "アウター", "#", class: "step-link" 
+      = link_to @item.category.name, "#", class: "step-link" 
     %li.step-content
       %i.fa.fa-angle-right
     %li.step-content
       %p.last-step
-        product3
+        = @item.name
 
 .main
   .show-main
@@ -30,21 +30,28 @@
       .top-content
         .itembox
           %h2.itembox__name
-            product3
+            = @item.name
           .itembox__body
             %ul.up
               %li.up-pic
-                = image_tag asset_path('pict/product1.png')
+                -# = image_tag asset_path('pict/product1.png')
+                = image_tag @item.images.first.image.to_s
             %ul.low
+              -if @item.images.second.present?
+                %li.low-pic
+                  -# = image_tag @item.images.first.image.to_s
+                  = image_tag @item.images.second.image.to_s, class:"low-pic-image"
+              -else
+                = image_tag asset_path('default.jpg'), class:"low-pic-image"
               %li.low-pic
-                = image_tag asset_path('pict/product1.png')
+                -# = image_tag @item.images.first.image.to_s
+                -# = image_tag @item.images.third.image.to_s, class: "js-replace-no-image"
               %li.low-pic
-                = image_tag asset_path('pict/product3.png')
-              %li.low-pic
-                = image_tag asset_path('pict/product4.png')
+                -# = image_tag @item.images.first.image.to_s
+                -# = image_tag @item.images.fourth.image.to_s, class: "js-replace-no-image"
           .itemBox__price
             %span.price
-              ¥30,000
+              = "¥#{@item.price}"
             .price-detail
               %span
                 (税込)
@@ -52,7 +59,7 @@
                 送料込み
 
             .item-detail
-              product3
+              = @item.name
             .item-table
               %table.teble-list
                 %tbody.table-body
@@ -60,24 +67,29 @@
                     %th
                       出品者
                     %td
-                      hoge
+                      =@item.user.nickname
                   %tr
                     %th
                       カテゴリー
                     %td
-                      = link_to "ベビー・キッズ", "#", class: "category" 
+                      = link_to @item.category.root.name, "#", class: "category" 
                       %br
-                      = link_to "ベビー服(男女兼用)  ~95cm", "#", class: "category"  
+                      = link_to @item.category.parent.name, "#", class: "category"  
                       %br
-                      = link_to "アウター", "#", class: "category" 
-                  %tr
-                    %th
-                      ブランド
-                    %td
-                  %tr
-                    %th
-                      商品のサイズ
-                    %td
+                      = link_to @item.category.name, "#", class: "category" 
+                  -# -if @item.brand.present?
+                  -#   %tr
+                  -#     %th
+                  -#       ブランド
+                  -#     %td
+                  -#       =@item.brand
+                    
+                  -# -if @item.condition;./;./;./;/.present?
+                  -#   %tr
+                  -#     %th
+                  -#       商品のサイズ
+                  -#     %td
+                  -#       = @item.condition
                   %tr
                     %th
                       商品の状態
@@ -87,18 +99,18 @@
                     %th
                       配送料の負担
                     %td
-                      送料込み（出品者負担）
+                      = @item.ship_area
                   %tr
                     %th
                       発送元の地域
                     %td
-                      = link_to "岩手県", "#", class: "category"
+                      = link_to @item.ship_area, "#", class: "category"
 
                   %tr
                     %th
                       発送日の目安
                     %td
-                      4-7日で発送
+                      = @item.ship_date
 
             .optional-area
               %ul.option-list
@@ -111,6 +123,20 @@
                   = link_to "#", class: "flag" do
                     %i.fa.fa-flag
                       不適切な商品の通報
+          - if user_signed_in? && current_user.id == @item.user_id  
+            .edit_and_destroy        
+              .item_edit
+                = link_to edit_item_path, class: "item_edit_path" do
+                  商品の編集
+              %p or
+              .item_destroy
+                = link_to item_path, method: :delete, class: "item_destroy_path" do
+                  この商品を削除する
+          -else
+            .item_confirm_path
+              =link_to confirm_items_path, class: "confirm_link" do
+                購入画面に進む
+
 
         .comment-box
           .comment-contents
@@ -154,7 +180,7 @@
   = render "items/index-footer"
   
 
-= link_to '#' do
+= link_to new_item_path do
   .purchaseBtn
     %span.purchaseBtn__text 出品する
     = image_tag asset_path('icon/icon_camera.png'), class: "purchaseBtn__icon"

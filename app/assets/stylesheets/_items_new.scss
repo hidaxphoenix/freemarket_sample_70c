@@ -21,7 +21,7 @@
     }
   }
   .main{
-    height: 2000px;
+    height: auto;
     display: flex;
     justify-content: center;
     &__box{
@@ -30,7 +30,6 @@
       background-color: white;
       &__image{
         padding: 40px;
-        height: 220px;
         &__text{
           &__sentence{
             font-size: 14px;
@@ -49,33 +48,110 @@
           margin-top: 16px;
           font-size: 14px;
         }
+        .item-image{
+          width: 119px;
+          margin: 3px 5px 3px 0;
+          float: left;
+          img{
+            width: 100%;
+            height: 100px;
+          }
+          &__operetion{
+            border: outset;
+            .image-text-delete{
+              color: red;
+              text-align: center;
+              cursor: pointer;
+            }
+          }
+        }
+        
+          #image-box-1{
+            display: flex;
+            margin-left: 1px;
+            width: 99%;
+          }
+            .item-num-0{
+              width: 100%;
+              height: 130px;
+              margin-left: auto;
+              background-color: whitesmoke;
+            }
+            .item-num-1{
+              width: 100%;
+              margin-left: auto;
+              background-color: whitesmoke;
+            }
+            .item-num-2{
+              width: 100%;
+              margin-left: auto;
+              background-color: whitesmoke;
+            }
+            .item-num-3{
+              width: 100%;
+              margin-left: auto;
+              background-color: whitesmoke;
+            }
+            .item-num-4{
+              width: 100%;
+              height: 130px;
+              margin-left: auto;
+              background-color: whitesmoke;
+            }
+            .item-num-5{
+              width: 100%;
+              background-color: whitesmoke;
+            }
+            .item-num-6{
+              width: 100%;
+              background-color: whitesmoke;
+            }
+            .item-num-7{
+              width: 100%;
+              background-color: whitesmoke;
+            }
+            .item-num-8{
+              width: 100%;
+              background-color: whitesmoke;
+            }
+            .item-num-9{
+              width: 100%;
+              background-color: whitesmoke;
+            }
+            .item-image__operetion--delete{
+              cursor: pointer;
+            }
         &__form{
-          height: 158px;
+          height: 130px;
           width: 620px;
-          background-color: rgb(245, 245, 245);
           box-sizing: border-box;
           margin: 0;
           outline: none;
-          padding: 0 16px;
+          display: flex;
           &__in{
-            margin-top: 8px;
-            padding: 0 4px;
+            margin-top: 6px;
+            height: 100%;
+            
             &__box{
               &__text{
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 position: relative;
+                padding-top: 15px;
                 &__icon{
                   height: 24px;
                   width: 24px;
-                  margin-bottom: 8px;
+                  padding-bottom: 50px;
                   position: absolute;
+                  i.fas.fa-camera{
+                    cursor: pointer;
+                  }
                 }
                 &__sentence{
                   font-size: 12px;
                   text-align: center;
-                  padding-top: 70px;
+                  padding-top: 50px;
                 }
               }
             }
@@ -84,11 +160,12 @@
 
       }
       &__NameAndDescripution{
-        height: 336px;
-        padding: 40px;
+        height: 345px;
         border-top: 0.05rem  solid rgb(245, 245, 245);
         border-bottom: 0.05rem  solid rgb(245, 245, 245);
         &__itemname{
+          margin-left: 40px;
+          margin-right: 40px;
           &__sentence{
             font-size: 14px;
             font-weight: 600;
@@ -129,6 +206,8 @@
         }
         &__itemDescription{
           margin-top: 32px;
+          margin-left: 40px;
+          margin-right: 40px;
           &__sentence{
             font-size: 14px;
             font-weight: 600;
@@ -151,6 +230,9 @@
               display: inline-block;
               position: relative;
               width: inherit;
+              .remaining-counter{
+                color: black;
+              }
               textarea{
                 border: 1px solid #ccc;
                 border-radius: 4px;
@@ -211,7 +293,6 @@
               select{
                 width: 100%;
                 height: 48px;
-
                 border: 1px solid #ccc;
                 border-radius: 4px;
                 box-sizing: border-box;
@@ -353,20 +434,45 @@
             }
           }
         }
+        .listing-product-delivery-charge-burden{
+          height: auto;
+          font-size: 14px;
+          font-weight: 600;
+          margin-top: 35px;
+          .lisiting-default__label{
+
+          }
+          .listing-default--require{
+            font-size: 12px;
+            margin: 8px;
+            padding: 0px 4px;
+            background-color: red;
+            color: white;
+            border-radius: 2px;
+          }
+          .listing-select-wrapper__box{
+            height: 46px;
+            select{
+              height: 100%;
+              width: 100%;
+            }
+          }
+        }
         &__area{
           margin-top: 32px;
           &__text{
             font-size: 14px;
             font-weight: 600;
-            span{
-              font-size: 12px;
-              margin: 8px;
-              padding: 0px 4px;
-              background-color: red;
-              color: white;
-              border-radius: 2px;
-            }
           }
+          span {
+            font-size: 12px;
+            margin: 8px;
+            padding: 0px 4px;
+            background-color: red;
+            color: white;
+            border-radius: 2px;
+          }
+          
           &__form{
             margin-top: 16px;
             align-items: center;
@@ -446,6 +552,13 @@
           padding-top: 40px;
         }
         &__value{
+          &__alert{
+            color: red;
+            font-size: 14px;
+            display: flex;
+            justify-content: flex-end;
+          }
+
           &__wrapper{
             display: flex;
             justify-content: space-between;
@@ -471,14 +584,14 @@
               }
               &__input{
                 align-items: center;
-                display: inline-flex;
-                width: 100%;  
+                width: 100%; 
+
                 &__box{
                   width: 100%;
                   display: inline-block;
                   position: relative;
                   width: inherit;
-                  .priceform{
+                  #item_price{
                     border: 1px solid #ccc;
                     border-radius: 4px;
                     box-sizing: border-box;
@@ -488,11 +601,15 @@
                     margin: 0;
                     outline: none;
                     padding: 0 16px;
-                    width: inherit; 
+                    width: 280px;
                   }
-                  .priceform::placeholder{
+                  #item_price::placeholder{
                     text-align: right;
                   }
+                }
+                &__error{
+                  font-size: 14px;
+                  color: red;
                 }
               }
             }
@@ -526,7 +643,6 @@
             &__result{
               font-size: 14px;
               line-height: 46px;
-
             }
           }
         }
@@ -536,7 +652,7 @@
         width: 360px;
         margin: 0 auto;
         &__red{
-          #redbutton{
+          .redbutton{
             background-color: red;
             color: white;
             font-size: 17px;

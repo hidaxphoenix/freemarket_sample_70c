@@ -1,7 +1,7 @@
 .headerinner
   .main-header
     %h1.icon
-      = link_to '#' do
+      = link_to root_path do
         =image_tag asset_path('logo/logo.png'), class: "image1"
     .searchBox
       %form{:action => "#", class: "form"}
@@ -39,8 +39,8 @@
           %li
             = link_to users_path , class: "No2-link" do
               %i.icon
-                =image_tag '/assets/member_photo_noimage_thumb.png', class: "face-profile"
-              %span.mypage-link マイページ
+                %i.fa.fa-user-alt
+              %span マイページ
     - else
       %ul.listright
         %li.listright__login

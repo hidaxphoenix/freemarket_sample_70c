@@ -204,10 +204,6 @@ img{
                 vertical-align: 4px;
                 margin-left: 6px;
               }
-              .mypage-link{
-                vertical-align: 12px;
-                margin-left: $font-size;
-              }
             }
           }
         }
@@ -451,13 +447,14 @@ img{
         display: flex;
         justify-content: space-around;
         .productList{
-          width: 220px;
           display: inline-block;
           float: left;
+          text-align: center;
           .aaa{
             background-color: #fff;
             display: inline-block;
             text-decoration: none;
+            margin: 12px;
             .productList--img{
               width: 220px;
               height: 150px;
@@ -514,50 +511,50 @@ img{
   }
 }
 
-.banner{
-  // background-image: image-url("pict/bg-appBanner-pict.jpg");
-  // padding: $hundred $forty;
-  // position: relative;
-  // background-size: cover;
-  background-position: $center;
-  .inner{
-    color: #fff;
-    text-align: $center;
-    &__title{
-      text-shadow: $zero $zero 5px rgba(0,0,0,0.4);
-      font-size: 25px;
-      font-weight: bold;
-      line-height: 1.4;
-    }
-    &__text{
-      font-size: 35px;
-      text-shadow: $zero $zero 5px rgba(0,0,0,0.4);
-    }
-    &__icon{
-      width: $perfect;
-      display: flex;
-      justify-content: $center;
-      margin: $twenty auto $zero;
-      .No2-link{
-        margin-right: $ten;
-        margin-top: 20px;
-        .aBtn{
-          margin-top: 50px;
-          .app{
-            padding: $ten;
-          }
-        }
-        .gBtn{
-          .google{
-            height: 70px;
-            width: 180px;
-            margin-top: 50px;
-          }
-        }
-      }
-    }
-  }
-}
+// .banner{
+//   background-image: image-url("pict/bg-appBanner-pict.jpg");
+//   padding: $hundred $forty;
+//   position: relative;
+//   background-size: cover;
+//   background-position: $center;
+//   .inner{
+//     color: #fff;
+//     text-align: $center;
+//     &__title{
+//       text-shadow: $zero $zero 5px rgba(0,0,0,0.4);
+//       font-size: 25px;
+//       font-weight: bold;
+//       line-height: 1.4;
+//     }
+//     &__text{
+//       font-size: 35px;
+//       text-shadow: $zero $zero 5px rgba(0,0,0,0.4);
+//     }
+//     &__icon{
+//       width: $perfect;
+//       display: flex;
+//       justify-content: $center;
+//       margin: $twenty auto $zero;
+//       .No2-link{
+//         margin-right: $ten;
+//         margin-top: 20px;
+//         .aBtn{
+//           margin-top: 50px;
+//           .app{
+//             padding: $ten;
+//           }
+//         }
+//         .gBtn{
+//           .google{
+//             height: 70px;
+//             width: 180px;
+//             margin-top: 50px;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
 
 .footer{
   padding: 60px $zero;
