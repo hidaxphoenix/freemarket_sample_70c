@@ -37,15 +37,18 @@
                 -# = image_tag asset_path('pict/product1.png')
                 = image_tag @item.images.first.image.to_s
             %ul.low
+              -if @item.images.second.present?
+                %li.low-pic
+                  -# = image_tag @item.images.first.image.to_s
+                  = image_tag @item.images.second.image.to_s, class:"low-pic-image"
+              -else
+                = image_tag asset_path('default.jpg'), class:"low-pic-image"
               %li.low-pic
                 -# = image_tag @item.images.first.image.to_s
-                = image_tag @item.images.second.image.to_s
+                -# = image_tag @item.images.third.image.to_s, class: "js-replace-no-image"
               %li.low-pic
                 -# = image_tag @item.images.first.image.to_s
-                = image_tag @item.images.third.image.to_s
-              %li.low-pic
-                -# = image_tag @item.images.first.image.to_s
-                = image_tag @item.images.fourth.image.to_s
+                -# = image_tag @item.images.fourth.image.to_s, class: "js-replace-no-image"
           .itemBox__price
             %span.price
               = "¥#{@item.price}"

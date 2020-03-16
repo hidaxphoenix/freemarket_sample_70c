@@ -84,9 +84,9 @@
             .low-pic{
               width: 25%;
               margin: 0 10px 0 0;
-              img {
-                object-fit: cover;
-                height: 87px;
+              .low-pic-image {
+                height: 150px;
+                width: 150px;
               }
             }
           }
