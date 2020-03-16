@@ -26,6 +26,8 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @category_parent_array = Category.roots.pluck(:name)
+
   end
 
   def update
