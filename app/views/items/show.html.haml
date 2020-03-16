@@ -37,15 +37,18 @@
                 -# = image_tag asset_path('pict/product1.png')
                 = image_tag @item.images.first.image.to_s
             %ul.low
+              -if @item.images.second.present?
+                %li.low-pic
+                  -# = image_tag @item.images.first.image.to_s
+                  = image_tag @item.images.second.image.to_s, class:"low-pic-image"
+              -else
+                = image_tag asset_path('default.jpg'), class:"low-pic-image"
               %li.low-pic
                 -# = image_tag @item.images.first.image.to_s
-                = image_tag asset_path('pict/product1.png')
+                -# = image_tag @item.images.third.image.to_s, class: "js-replace-no-image"
               %li.low-pic
                 -# = image_tag @item.images.first.image.to_s
-                = image_tag asset_path('pict/product3.png')
-              %li.low-pic
-                -# = image_tag @item.images.first.image.to_s
-                = image_tag asset_path('pict/product4.png')
+                -# = image_tag @item.images.fourth.image.to_s, class: "js-replace-no-image"
           .itemBox__price
             %span.price
               = "¥#{@item.price}"
@@ -129,6 +132,12 @@
               .item_destroy
                 = link_to item_path, method: :delete, class: "item_destroy_path" do
                   この商品を削除する
+          -else
+            .item_confirm_path
+              =link_to confirm_items_path, class: "confirm_link" do
+                購入画面に進む
+
+
         .comment-box
           .comment-contents
             %textarea
@@ -171,7 +180,7 @@
   = render "items/index-footer"
   
 
-= link_to '#' do
+= link_to new_item_path do
   .purchaseBtn
     %span.purchaseBtn__text 出品する
     = image_tag asset_path('icon/icon_camera.png'), class: "purchaseBtn__icon"
