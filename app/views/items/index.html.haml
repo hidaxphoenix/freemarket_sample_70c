@@ -111,8 +111,13 @@
 %footer.footer
   = render "items/index-footer"
 
-  
-= link_to new_item_path do
-  .purchaseBtn
-    %span.purchaseBtn__text 出品する
-    = image_tag asset_path('icon/icon_camera.png'), class: "purchaseBtn__icon"
+- if user_signed_in?
+  = link_to new_item_path do
+    .purchaseBtn
+      %span.purchaseBtn__text 出品する
+      = image_tag asset_path('icon/icon_camera.png'), class: "purchaseBtn__icon"
+- else
+  = link_to new_user_registration_path do
+    .purchaseBtn
+      %span.purchaseBtn__text 出品する
+      = image_tag asset_path('icon/icon_camera.png'), class: "purchaseBtn__icon"
