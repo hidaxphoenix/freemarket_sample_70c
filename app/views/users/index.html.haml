@@ -19,7 +19,8 @@
       = link_to "#", class: "user-face-action" do
         %figure
           =image_tag asset_path('pict/member_photo_noimage_thumb.png'), class: "face-icon-opacy"
-        %h2.user-name あああああ
+        %h2.user-name 
+          = current_user.nickname
         .mypage-number
           %div
             評価
