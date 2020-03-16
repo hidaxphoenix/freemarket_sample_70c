@@ -84,7 +84,7 @@
                 必須
             .main__box__detail__status__form
               .main__box__detail__status__form__box
-                = form.select :condition, Item.conditions, {}, {class: 'itemnameform'}
+                = form.select :condition, options_for_select(Item.conditions, @item.condition_before_type_cast), {}, {class: 'itemnameform'}
 
 
         .main__box__delivery
@@ -97,8 +97,8 @@
               %span 必須
               .main__box__delivery__fee__form
                 .main__box__delivery__fee__form__box
-                  = form.select :ship_charge, Item.ship_charges, {}, {class: 'itemnameform',id:"ship_charge"}
-                  
+                  -# - binding.pry
+                  = form.select :ship_charge, options_for_select(Item.ship_charges, @item.ship_charge_before_type_cast) , {}, {class: 'itemnameform',id:"ship_charge"}
           .listing-product-delivery-charge-burden
                 
           .main__box__delivery__area
@@ -107,7 +107,7 @@
               %span 必須
               .main__box__delivery__area__form
                 .main__box__delivery__area__form__box
-                  = form.select :ship_area, Item.ship_areas, {}, {class: 'itemnameform'}
+                  = form.select :ship_area, options_for_select(Item.ship_areas, @item.ship_area_before_type_cast), {}, {class: 'itemnameform'}
 
           .main__box__delivery__day
             .main__box__delivery__day__text
@@ -115,7 +115,7 @@
               %span 必須
               .main__box__delivery__day__form
                 .main__box__delivery__day__form__box
-                  = form.select :ship_date, Item.ship_dates, {}, {class: 'itemnameform'}
+                  = form.select :ship_date, options_for_select(Item.ship_dates, @item.ship_date_before_type_cast), {}, {class: 'itemnameform'}
                 .main__box__delivery__day__form__alert
               
         .main__box__price
