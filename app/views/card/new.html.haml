@@ -22,34 +22,39 @@
         = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/discover.svg?238737266",width:"32px",height:"20px"
     %br
       %label.expiration_date 有効期限
-      %select#exp_month{name: "exp_month", type: "text"}
-        %option{value: ""} --
-        %option{value: "1"}01
-        %option{value: "2"}02
-        %option{value: "3"}03
-        %option{value: "4"}04
-        %option{value: "5"}05
-        %option{value: "6"}06
-        %option{value: "7"}07
-        %option{value: "8"}08
-        %option{value: "9"}09
-        %option{value: "10"}10
-        %option{value: "11"}11
-        %option{value: "12"}12
+      %span.exp_month
+      = select_tag('exp_month',options_for_select(1..12),include_blank: '--',class: "exp_month")
       %span.month_year 月/
-      %select#exp_year{name: "exp_year", type: "text"}
-        %option{value: ""} --
-        %option{value: "2019"}19
-        %option{value: "2020"}20
-        %option{value: "2021"}21
-        %option{value: "2022"}22
-        %option{value: "2023"}23
-        %option{value: "2024"}24
-        %option{value: "2025"}25
-        %option{value: "2026"}26
-        %option{value: "2027"}27
-        %option{value: "2028"}28
-        %option{value: "2029"}29
+      -# %select#exp_month{name: "exp_month", type: "text"}
+        -# %option{value: ""} --
+        -# %option{value: "1"}01
+        -# %option{value: "2"}02
+        -# %option{value: "3"}03
+        -# %option{value: "4"}04
+        -# %option{value: "5"}05
+        -# %option{value: "6"}06
+        -# %option{value: "7"}07
+        -# %option{value: "8"}08
+        -# %option{value: "9"}09
+        -# %option{value: "10"}10
+        -# %option{value: "11"}11
+        -# %option{value: "12"}12
+      -# %span.month_year 月/
+      -# %select#exp_year{name: "exp_year", type: "text"}
+        -# %option{value: ""} --
+        -# %option{value: "2019"}19
+        -# %option{value: "2020"}20
+        -# %option{value: "2021"}21
+        -# %option{value: "2022"}22
+        -# %option{value: "2023"}23
+        -# %option{value: "2024"}24
+        -# %option{value: "2025"}25
+        -# %option{value: "2026"}26
+        -# %option{value: "2027"}27
+        -# %option{value: "2028"}28
+        -# %option{value: "2029"}29
+      %span.exp_year
+      = select_tag('exp_year',options_for_select(2019..2029),include_blank: '--',class: "exp_year")
       %span.month_year 年
       %span.necessarily 必須
     %br
