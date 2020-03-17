@@ -5,7 +5,7 @@ class Item < ApplicationRecord
   has_many :images, dependent: :destroy
   # has_one :trade
   belongs_to :saler, class_name: "User"
-  belongs_to :buyer, class_name: "User"
+  belongs_to :buyer, class_name: "User",optional:true
 
   validates :name,           length: { maximum: 40 }
   validates :description,    length: { maximum: 1000 }
