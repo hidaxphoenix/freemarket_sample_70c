@@ -5,8 +5,16 @@ class Item < ApplicationRecord
   has_many :images, dependent: :destroy
   # has_one :trade
 
-  validates :name,           length: { maximum: 40 }
-  validates :description,    length: { maximum: 1000 }
+  validates :name,           length: { maximum: 40 }, presence: true
+  validates :description,    length: { maximum: 1000 }, presence: true
+  validates :category_id, presence: true
+  validates :condition, presence: true
+  validates :price, numericality: {greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999}, presence: true
+  validates :ship_charge, presence: true
+  validates :ship_area, presence: true
+  validates :ship_date, presence: true
+  validates :ship_method, presence: true
+  validates :user_id, presence: true
 
 
   # accepts_nested_attributes_for :trade
