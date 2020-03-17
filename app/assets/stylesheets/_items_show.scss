@@ -248,6 +248,13 @@
         background-color: #fff;
         margin: 10px 0;
         text-align: center;
+        .notice-msg {
+          padding: 8px;
+          font-size: 14px;
+          background-color: #f8f8f8;
+          margin: 10px 0;
+          text-align: left;
+        }
         .comment-contents {
           list-style: none;
           margin-block-start: 1em;
@@ -261,13 +268,6 @@
             font-family: inherit;
             font-size: inherit;
             font-weight: inherit;
-          }
-          .notice-msg {
-            padding: 8px;
-            font-size: 14px;
-            background-color: #f8f8f8;
-            margin: 10px 0;
-            text-align: left;
           }
           .comment-btn {
             font-size: 18px;
@@ -286,6 +286,14 @@
               font-size: inherit;
               text-rendering: auto;
               -webkit-font-smoothing: antialiased;
+            }
+          }
+        }
+        .comments{
+          .comments-main{
+            .comment_all{
+              padding: 10px 0;
+              font-size: 20px;
             }
           }
         }

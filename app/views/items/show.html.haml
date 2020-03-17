@@ -144,15 +144,27 @@
 
 
         .comment-box
+          %p.notice-msg
+            相手のことを考え丁寧なコメントを心がけましょう。
+            %br
+            不快な言葉遣いなどは利用制限や退会処分となることがあります。
           .comment-contents
-            %textarea
-            %p.notice-msg
-              相手のことを考え丁寧なコメントを心がけましょう。
-              %br
-              不快な言葉遣いなどは利用制限や退会処分となることがあります。
-            %btn.comment-btn
-              %i.fa.fa-comment
-                コメントする
+            - if current_user
+              = form_with(model: [@item, @comment], local: true) do |form|
+                = form.text_area :text, placeholder: "コメントする", rows: "2"
+                = form.submit "コメントする", class: "comment-btn"
+            - else
+              %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
+
+          .comments
+            %h4 コメント一覧
+            .comments-main
+              - if @comments 
+                - @comments.each do |comment|
+                  .comment_all
+                    = comment.user.nickname + ":"
+                    = comment.text
+        
       
       %ul.move-items
         %li.before-item

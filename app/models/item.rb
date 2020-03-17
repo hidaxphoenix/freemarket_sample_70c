@@ -7,6 +7,8 @@ class Item < ApplicationRecord
   belongs_to :saler, class_name: "User"
   belongs_to :buyer, class_name: "User"
 
+  has_many :comments
+
   validates :name,           length: { maximum: 40 }
   validates :description,    length: { maximum: 1000 }
 
