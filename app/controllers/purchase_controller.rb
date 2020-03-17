@@ -18,7 +18,7 @@ class PurchaseController < ApplicationController
   end
 
   def pay
-    card = Card.where(user_id: current_user.id).first
+    card = Card.find_by(user_id: current_user.id)
     Payjp.api_key = Rails.application.credentials.PAYJP_SECRET_KEY
     Payjp::Charge.create(
     :amount => 10000, #支払金額を入力（itemテーブル等に紐づけても良い）
