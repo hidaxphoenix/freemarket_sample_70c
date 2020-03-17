@@ -9,6 +9,7 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.images.new
+    @items = Item.includes(:images).order('created_at DESC')
     @category_parent_array = Category.roots.pluck(:name)
   end
 
@@ -33,6 +34,8 @@ class ItemsController < ApplicationController
   end
 
   def update
+    # binding.pry
+
     if @item.update(item_params)
 		  redirect_to root_path
 	  else
