@@ -26,13 +26,18 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @category_parent_array = Category.roots.pluck(:name)
+    @category_parent_array = Category.roots
+    @category_child_array = @item.category.parent.parent.children
+    @category_grandchildren2 = @item.category.parent.children
 
   end
 
   def update
-    @item.update(item_params)
-    redirect_to root_path
+    if @item.update(item_params)
+		  redirect_to root_path
+	  else
+      redirect_to new_item_path  #itemをセーブできなかった時
+    end
   end
 
   def destroy
