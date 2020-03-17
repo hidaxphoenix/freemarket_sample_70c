@@ -20,12 +20,14 @@ Rails.application.routes.draw do
       get 'get_delivery_method'
     end
 
+
+    resources :comments, only: :create
+    
     member do
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
       get 'get_delivery_method'
     end
-
 
   end
   resources :users
