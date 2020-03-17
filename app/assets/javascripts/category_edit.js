@@ -103,13 +103,9 @@ function appendGrandchidrenBox(insertHTML){
       .done(function(grandchildren){
         if (grandchildren.length != 0) {
           $('#grandchildren_wrapper_edit').remove(); //子が変更された時、孫以下を削除するする
-          // $('#size_wrapper').remove();
-          // $('#brand_wrapper').remove();
-          // $('#child_category_edit').remove();
           $('#grandchild_category_edit').remove();
           $('#child_category_edit').remove();
           $('#grandchild_category_edit2').remove();
-          // $('#children_wrapper_edit2').remove(); //親が変更された時、子以下を削除するする
           $('#grandchildren_wrapper_edit2').remove(); //親が変更された時、子以下を削除するする
   
 
@@ -151,9 +147,6 @@ function appendGrandchidrenBox(insertHTML){
         .done(function(grandchildren){
           if (grandchildren.length != 0) {
             $('#grandchildren_wrapper_edit').remove(); //子が変更された時、孫以下を削除するする
-            // $('#size_wrapper').remove();
-            // $('#brand_wrapper').remove();
-            // $('#child_category_edit').remove();
             $('#grandchild_category_edit').remove();
             $('#grandchild_category_edit2').remove();
 

@@ -26,7 +26,6 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    # binding.pry
     @category_parent_array = Category.roots
     @category_child_array = @item.category.parent.parent.children
     @category_grandchildren2 = @item.category.parent.children
@@ -34,14 +33,10 @@ class ItemsController < ApplicationController
   end
 
   def update
-    binding.pry
-    @item.update(item_params)
-
     if @item.update(item_params)
-
 		  redirect_to root_path
 	  else
-	    redirect_to new_item_path  #itemをセーブできなかった時
+      redirect_to new_item_path  #itemをセーブできなかった時
     end
   end
 
@@ -66,7 +61,6 @@ class ItemsController < ApplicationController
 
 
   def get_category_children
-    # binding.pry
     @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
     # find_byの検索においてnameとancestryで検索している理由は、parent_nameが複数あったときのための保険
     #parent_nameはJSから取ってきている
