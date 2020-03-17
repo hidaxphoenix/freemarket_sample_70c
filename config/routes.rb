@@ -19,6 +19,8 @@ Rails.application.routes.draw do
       get 'get_delivery_method'
     end
 
+    resources :comments, only: :create
+
   end
   resources :users
 end
