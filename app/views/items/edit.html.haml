@@ -14,20 +14,58 @@
                 必須
           .main__box__image__description
             最大10枚までアップロードできます
-          #image-box-1
-            .item-num-0#image-box__container
-              .main__box__image__form__in
-                .main__box__image__form__in__box
-                  = form.fields_for :images do |image|
-                    -# .input_area
-                    = image.file_field :image, type: 'file', name: "item[images_attributes][][image]", value:"", style: "display:none", id:"img-file"
-                    
+            #image-box
+              #previews
+                - if @item.persisted?
+                  - @item.images.each_with_index do |image, i|
+                    = image_tag image.image.url, data: { index: i }, width: "100", height: '100'
+
+              = form.fields_for :images do |image|
+                .js-file_group{"data-index" => "#{image.index}"}
+                  = image.file_field :image, class: 'js-file'
+                  %br/
+                  %span.js-remove 削除
+                - if @item.persisted?
+                  = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+                - if @item.persisted?
+                  .js-file_group{"data-index" => "#{@item.images.count}"}
+                    = file_field_tag :image, name: "product[images_attributes][#{@item.images.count}][src]", class: 'js-file'
+                    .js-remove 削除
+
+                  -# #image-box-1
+          -#   .item-num-0#image-box__container
+          -#     .main__box__image__form__in
+          -#       .main__box__image__form__in__box
+                  -# -if item.persisted?
+                  -#   -@item.images.each_with_index do |image,i|
+                  -#     =image_tag @item.images
+                  -# = form.fields_for :images do |image|
+                  -#   .input_area
+                  -#     = image.file_field :image, type: 'file', name: "item[images_attributes][][image]", value:"", style: "display:none", id:"img-file"
+                      
+                  -#     - if @item.persisted?
+                  -#       = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+                  -#     - if @item.persisted?
+                  -#       .js-file_group{"data-index" => "#{@item.images.count}"}
+                  -#         = file_field_tag :src, name: "item[images_attributes][#{@item.images.count}][src]", class: 'js-file'
+                  -#         .js-remove 削除
                   .main__box__image__form__in__box__text
                     .main__box__image__form__in__box__text__icon
                       %label{for: "img-file"}
                         %i.fas.fa-camera
                     .main__box__image__form__in__box__text__sentence
                       ドラッグアンドドロップ<br>またはクリックしてまたはクリックしてファイルをアップロード
+
+
+
+
+
+
+
+
+
+
+
 
 
         .main__box__NameAndDescripution
@@ -65,12 +103,14 @@
                 必須
             .main__box__detail__category__form
               .main__box__detail__category__form__box
+
                 = form.select :category, options_for_select(@category_parent_array.map{|c|[c[:name], c[:name], {'data-category'=>c[:id], 'id'=>c[:id]}]}, @item.category.parent.parent.id), {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category_edit', name:"",value: @parent} # @category_parent_arrayには、parent.nameが入っている。
                 = form.select :category, options_for_select(@category_child_array.map{|c|[c[:name], c[:name], {'data-category'=>c[:id], 'id'=>c[:id]}]}, @item.category.parent.id), {}, {class: 'select', id: 'child_category_edit', name:""}
                 = form.select :category, options_for_select(@category_grandchildren2.map{|c|[c[:name], c[:id], {'data-category'=>c[:id], 'id'=>c[:id]}]}, @item.category.id), {}, {class: 'select', id: 'grandchild_category_edit',name:"category_id", value: @item.category.id}
 
 
                 -# = @category_grandchildren2.name
+
                 // @category_parent_arrayの内容を選択肢に表示
 
           .main__box__detail__bland
