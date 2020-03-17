@@ -1,0 +1,74 @@
+body {
+  width: 100%;
+  height: 100vh;
+}
+.card_page {
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+  padding-top: 250px;
+  .card_number {
+    padding-bottom: 10px;
+  }
+    .card {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .necessarily {
+      text-align: end;
+      background-color: #3CCACE;
+      color: white;
+      border-radius: 2px;
+      padding: 2px ;
+      margin-left: 20px;
+    }
+  #card_number {
+    width: 100%;
+    border-radius: 4px;
+    border-color: white;
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+  .signup-card-list {
+    display: flex;
+    li img {
+      width: 60px;
+      height: 30px;
+      margin-right: 10px;
+      margin-top: 10px;
+    }
+  }
+  .expiration_date {
+    font-size: 20px;
+    font-weight: bold;
+  }
+    #year.exp_month {
+      height: 25px;
+    }
+    #year.exp_year {
+      height: 25px;
+    }
+  .month_year {
+    font-size: 20px;
+    color: black;
+  }
+  #cvc {
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: 30px;
+    font-size: 20px;
+    margin-top: 10px;
+
+  }
+  .security_code{
+    font-size: 20px;
+    font-weight: bold;
+  }
+  #token_submit {
+    color: white;
+    background-color: #3CCACE;
+    width: 100%;
+    height: 35px;
+    border-radius: 4px;
+  }
+}
