@@ -44,6 +44,7 @@ $(function(){
   $('#parent_category').on('change', function(){
     //選択された親カテゴリーの名前(内容)を.valueで取得
     var parentCategory = document.getElementById('parent_category').value;
+
     //親カテゴリーが初期値でないことを確認
     if (parentCategory != "---"){
       $.ajax({
@@ -106,4 +107,7 @@ $(function(){
       $('#brand_wrapper').remove();
     }
   });
+
+
+
 });
