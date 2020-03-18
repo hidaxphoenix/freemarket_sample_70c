@@ -84,20 +84,21 @@
       .productLists
         .productList
           - @items.each do |item|
-            = link_to item_path(item.id), class:"aaa" do
-              %figure.productList--img
-                = image_tag item.images.first.image.url
-              .product--body
-                %h3.name 
-                  = item.name
-                .details
-                  %ul
-                    %li 
-                      = item.price 
-                    %li
-                      %i.fa.fa-star
-                      0
-                  %p （税込）
+            -if item.buyer_id.nil?
+              = link_to item_path(item.id), class:"aaa" do
+                %figure.productList--img
+                  = image_tag item.images.first.image.url
+                .product--body
+                  %h3.name 
+                    = item.name
+                  .details
+                    %ul
+                      %li 
+                        = item.price 
+                      %li
+                        %i.fa.fa-star
+                        0
+                    %p （税込）
 %aside.banner
   .inner
     %h2.inner__title だれでもかんたん、人生を変えるフリマアプリ

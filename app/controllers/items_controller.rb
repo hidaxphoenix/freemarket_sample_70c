@@ -104,6 +104,7 @@ class ItemsController < ApplicationController
     :customer => card.customer_id, #顧客ID
     :currency => 'jpy', #日本円
   )
+    @item.update(buyer_id: current_user.id)
   redirect_to action: 'done' #完了画面に移動
   end
 
