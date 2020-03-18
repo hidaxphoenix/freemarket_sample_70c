@@ -48,115 +48,162 @@
           margin-top: 16px;
           font-size: 14px;
         }
-        .item-image{
-          width: 119px;
-          margin: 3px 5px 3px 0;
-          float: left;
-          img{
-            width: 100%;
-            height: 100px;
-          }
-          &__operetion{
-            border: outset;
-            .image-text-delete{
-              color: red;
-              text-align: center;
-              cursor: pointer;
+        &__container{
+          display: block;
+          margin: 16px auto 0;
+          display: flex;
+          flex-wrap: wrap;
+          background-color: rgb(224, 224, 224);
+          height: 160px;
+          border-style: dashed;
+          border-color: rgb(204, 204, 204);
+          border-width: 1px;
+          #previews {
+            // background-color: lightcyan;
+            display: flex;
+            img{
+              width: 112px;
+              height: 112px;
             }
           }
-        }
-        
-          #image-box-1{
+          .label-content{
+            margin-bottom: 10px;
+            width: 620px;
+            
+          }
+          #image-box{
             display: flex;
             margin-left: 1px;
             width: 99%;
-          }
-            .item-num-0{
+            .js-file_group{
               width: 100%;
-              height: 130px;
-              margin-left: auto;
-              background-color: whitesmoke;
-            }
-            .item-num-1{
-              width: 100%;
-              margin-left: auto;
-              background-color: whitesmoke;
-            }
-            .item-num-2{
-              width: 100%;
-              margin-left: auto;
-              background-color: whitesmoke;
-            }
-            .item-num-3{
-              width: 100%;
-              margin-left: auto;
-              background-color: whitesmoke;
-            }
-            .item-num-4{
-              width: 100%;
-              height: 130px;
-              margin-left: auto;
-              background-color: whitesmoke;
-            }
-            .item-num-5{
-              width: 100%;
-              background-color: whitesmoke;
-            }
-            .item-num-6{
-              width: 100%;
-              background-color: whitesmoke;
-            }
-            .item-num-7{
-              width: 100%;
-              background-color: whitesmoke;
-            }
-            .item-num-8{
-              width: 100%;
-              background-color: whitesmoke;
-            }
-            .item-num-9{
-              width: 100%;
-              background-color: whitesmoke;
-            }
-            .item-image__operetion--delete{
-              cursor: pointer;
-            }
-        &__form{
-          height: 130px;
-          width: 620px;
-          box-sizing: border-box;
-          margin: 0;
-          outline: none;
-          display: flex;
-          &__in{
-            margin-top: 6px;
-            height: 100%;
-            
-            &__box{
-              &__text{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                position: relative;
-                padding-top: 15px;
-                &__icon{
-                  height: 24px;
-                  width: 24px;
-                  padding-bottom: 50px;
-                  position: absolute;
-                  i.fas.fa-camera{
-                    cursor: pointer;
-                  }
+              .js-file{
+                font-size: 12px;
+                // display: none;
+              }
+              .label-box{
+                .fas.fa-camera {
+                  line-height: 160px;
+                  display: flex;
+                  justify-content: center;
                 }
-                &__sentence{
-                  font-size: 12px;
-                  text-align: center;
-                  padding-top: 50px;
-                }
+              }
+              .js-remove{
+                font-size: 10px;
               }
             }
           }
         }
+
+        // .item-image{
+        //   width: 119px;
+        //   margin: 3px 5px 3px 0;
+        //   float: left;
+        //   img{
+        //     width: 100%;
+        //     height: 100px;
+        //   }
+        //   &__operetion{
+        //     border: outset;
+        //     .image-text-delete{
+        //       color: red;
+        //       text-align: center;
+        //       cursor: pointer;
+        //     }
+        //   }
+        // }
+        
+        //   #image-box-1{
+        //     display: flex;
+        //     margin-left: 1px;
+        //     width: 99%;
+        //   }
+        //     .item-num-0{
+        //       width: 100%;
+        //       height: 130px;
+        //       margin-left: auto;
+        //       background-color: whitesmoke;
+        //     }
+        //     .item-num-1{
+        //       width: 100%;
+        //       margin-left: auto;
+        //       background-color: whitesmoke;
+        //     }
+        //     .item-num-2{
+        //       width: 100%;
+        //       margin-left: auto;
+        //       background-color: whitesmoke;
+        //     }
+        //     .item-num-3{
+        //       width: 100%;
+        //       margin-left: auto;
+        //       background-color: whitesmoke;
+        //     }
+        //     .item-num-4{
+        //       width: 100%;
+        //       height: 130px;
+        //       margin-left: auto;
+        //       background-color: whitesmoke;
+        //     }
+        //     .item-num-5{
+        //       width: 100%;
+        //       background-color: whitesmoke;
+        //     }
+        //     .item-num-6{
+        //       width: 100%;
+        //       background-color: whitesmoke;
+        //     }
+        //     .item-num-7{
+        //       width: 100%;
+        //       background-color: whitesmoke;
+        //     }
+        //     .item-num-8{
+        //       width: 100%;
+        //       background-color: whitesmoke;
+        //     }
+        //     .item-num-9{
+        //       width: 100%;
+        //       background-color: whitesmoke;
+        //     }
+        //     .item-image__operetion--delete{
+        //       cursor: pointer;
+        //     }
+        // &__form{
+        //   height: 130px;
+        //   width: 620px;
+        //   box-sizing: border-box;
+        //   margin: 0;
+        //   outline: none;
+        //   display: flex;
+        //   &__in{
+        //     margin-top: 6px;
+        //     height: 100%;
+            
+        //     &__box{
+        //       &__text{
+        //         display: flex;
+        //         justify-content: center;
+        //         align-items: center;
+        //         position: relative;
+        //         padding-top: 15px;
+        //         &__icon{
+        //           height: 24px;
+        //           width: 24px;
+        //           padding-bottom: 50px;
+        //           position: absolute;
+        //           i.fas.fa-camera{
+        //             cursor: pointer;
+        //           }
+        //         }
+        //         &__sentence{
+        //           font-size: 12px;
+        //           text-align: center;
+        //           padding-top: 50px;
+        //         }
+        //       }
+        //     }
+        //   }
+        // }
 
       }
       &__NameAndDescripution{
