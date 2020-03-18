@@ -10,9 +10,15 @@ Rails.application.routes.draw do
   root 'items#index'
   resources :items do
 
-    collection {get "confirm"} 
-      resources :items, only: [:show]
+    # collection {get "confirm"} 
+    #   resources :items, only: [:show]
     
+    member do
+      get 'confirm', to: 'items#confirm'
+      post 'pay', to: 'items#pay'
+      get 'done', to: 'items#done'
+
+    end
 
     collection do
       get 'get_category_children', defaults: { format: 'json' }
