@@ -100,7 +100,7 @@ class ItemsController < ApplicationController
     card = Card.find_by(user_id: current_user.id)
     Payjp.api_key = Rails.application.credentials.PAYJP_SECRET_KEY
     Payjp::Charge.create(
-    :amount => 10000, #支払金額を入力（itemテーブル等に紐づけても良い）
+    :amount => @item.price, #支払金額を入力（itemテーブル等に紐づけても良い）
     :customer => card.customer_id, #顧客ID
     :currency => 'jpy', #日本円
   )
