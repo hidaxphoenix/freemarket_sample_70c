@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     post 'addresses', to: 'users/registrations#create_address'
   end
   root 'items#index'
-  resources :items, shallow: true do
+  resources :items do
 
     resources :likes, only: [:create, :destroy]
 
@@ -31,6 +31,10 @@ Rails.application.routes.draw do
     end
 
   end
+
+
+
+
   resources :users
   resources :card, only: [:new, :show] do
     collection do
@@ -39,6 +43,10 @@ Rails.application.routes.draw do
       post 'delete', to: 'card#delete'
     end
   end
+
+
+
+
   resources :purchase, only: [:index] do
     collection do
       get 'index', to: 'purchase#index'
@@ -47,4 +55,7 @@ Rails.application.routes.draw do
     end
   end
     
+
+
+
 end

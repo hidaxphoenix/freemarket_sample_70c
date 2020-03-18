@@ -122,11 +122,34 @@
             .optional-area
               %ul.option-list
                 %li.optional-btn-likebtn
-                  = @item.likes.count 
-                  - if current_user.already_liked?(@item)
-                    = button_to 'いいねを取り消す', like_path(@item), method: :delete
-                  - else
-                    = button_to 'いいね', item_likes_path(@item)
+                  = render partial: "likes/like", locals: { item: @item }
+                  -# - if user_signed_in?
+                  -#   - if @item.like_user(current_user.id)
+                  -#     .optional-btn-likebtn__dislike
+                  -#       =link_to item_likes_path(current_user, @item, like), method: "DELETE", remote: true do
+                  -#         %i.fas.fa-heart
+                  -#         %span いいね！
+                  -#         %span 
+                  -#           = @item.likes_count
+                  -#   - else
+                  -#     .optional-btn-likebtn__like
+                  -#       =link_to item_likes_path(current_user, @item), method: "POST", remote: true do
+                  -#         %i.fas.fa-heart
+                  -#         %span いいね！
+                  -#         %span
+                  -#           = @item.likes_count
+                  -# -else
+                  -#   .optional-btn-likebtn__like
+                  -#     %i.fas.fa-heart
+                  -#       %span いいね！
+                  -#       %span 
+                  -#         = @item.like_count
+                  -# = render partial: 'likes/like', locals: { item: @item, items: @items, likes: @likes, like: @like}
+                  -# = @item.likes.count 
+                  -# - if current_user.already_liked?(@item)
+                  -#   = button_to 'いいねを取り消す', like_path(@item), method: :delete
+                  -# - else
+                  -#   = button_to 'いいね', item_likes_path(@item)
               -# %h2 いいねしたユーザー
               -# - @item.liked_users.each do |user|
               -#   = user.nicknname
