@@ -46,7 +46,10 @@
                   ＋ 登録してください
             .wrapper__bottombox__inner__form__submit
               .wrapper__bottombox__inner__form__submit__box
-                %input#backbutton{type: "submit", value: "購入する"}
+                = form_tag(pay_item_path, method: :post)  do
+                  %button 購入する
+                  
+                -# %input#backbutton{type: "submit", value: "購入する"}
 
 
   %footer.bottom
