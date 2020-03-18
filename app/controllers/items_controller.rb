@@ -67,12 +67,10 @@ class ItemsController < ApplicationController
     end
   end
 
+
   def search
-    respond_to do |format|
-      format.html
-      format.json do
-      end
-    end
+    # binding.pry
+    @items = Item.search(params[:keyword])
   end
   
 
