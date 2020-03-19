@@ -155,7 +155,7 @@
   }
 
   // file_fieldのnameに動的なindexをつける為の配列
-  let fileIndex = [1,2];
+  let fileIndex = [1,2,3,4];
   // 既に使われているindexを除外
   lastIndex = $('.js-file_group:last').data('index');
   fileIndex.splice(0, lastIndex);
