@@ -10,16 +10,25 @@ Rails.application.routes.draw do
   root 'items#index'
   resources :items do
 
+
     resources :likes, only: [:create, :destroy]
 
     collection {get "confirm"} 
       resources :items, only: [:show]
+
     
+    member do
+      get 'confirm', to: 'items#confirm'
+      post 'pay', to: 'items#pay'
+      get 'done', to: 'items#done'
+
+    end
 
     collection do
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
       get 'get_delivery_method'
+      get 'search'
     end
 
     resources :comments, only: :create
