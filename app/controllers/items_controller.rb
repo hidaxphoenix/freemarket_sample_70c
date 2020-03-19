@@ -6,6 +6,7 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.includes(:user)
+    
   end
 
   def new
@@ -70,11 +71,11 @@ class ItemsController < ApplicationController
 
 
   def search
-    # binding.pry
-    @items = Item.search(params[:keyword])
+      @items_simple = Item.search(params[:keyword])
+      @q = Item.ransack(params[:q])
+      @search_item = Item.ransack(params[:q]) 
+      @items = @search_item.result
   end
-  
-
 
 
   def get_category_children
@@ -117,6 +118,10 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
+  end
+
+  def set_ransack
+    @q = Item.ransack(params[:q])
   end
 
 end

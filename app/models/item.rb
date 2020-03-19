@@ -34,6 +34,19 @@ class Item < ApplicationRecord
   end
 
 
+  # def self.search(search)
+  #   if search
+  #     Item.none
+  #   else
+      
+  #     Item.where('name LIKE(?)', "%#{search}%")
+  #   end
+  # end
+
+
+  
+
+
 
   # accepts_nested_attributes_for :trade
   accepts_nested_attributes_for :images, allow_destroy: true
