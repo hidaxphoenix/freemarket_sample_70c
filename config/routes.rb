@@ -29,6 +29,7 @@ Rails.application.routes.draw do
       get 'get_category_grandchildren', defaults: { format: 'json' }
       get 'get_delivery_method'
       get 'search'
+      # get 'detail_search'
     end
 
     resources :comments, only: :create
