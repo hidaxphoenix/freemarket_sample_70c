@@ -32,6 +32,18 @@ class Item < ApplicationRecord
   validates :user_id, presence: true
 
 
+
+
+  def self.search(search)
+    if search
+      Item.where('name LIKE(?)', "%#{search}%")
+    else
+      Item.all
+    end
+  end
+
+
+
   # accepts_nested_attributes_for :trade
   accepts_nested_attributes_for :images, allow_destroy: true
   enum condition: {
