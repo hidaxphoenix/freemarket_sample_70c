@@ -6,9 +6,16 @@ class User < ApplicationRecord
 
   has_one :address
   accepts_nested_attributes_for :address
-  has_many :items
+
+  has_many :items, dependent: :destroy
 
   has_many :comments
+
+  has_many :likes, dependent: :destroy
+  has_many :liked_items, through: :likes, source: :item
+  def already_liked?(item)
+    self.likes.exists?(item_id: item.id)
+  end
 
   has_many :buyed_items, foreign_key: "buyer_id", class_name: "Item"
   has_many :saling_items, -> { where("buyer_id is NULL") }, foreign_key: "saler_id", class_name: "Item"

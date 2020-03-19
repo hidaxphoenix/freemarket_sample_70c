@@ -117,12 +117,14 @@
                     %td
                       = @item.ship_date
 
+
+
             .optional-area
               %ul.option-list
                 %li.optional-btn-likebtn
-                  %i.fa.fa-star
-                    お気に入り 0
-                    
+                  = render partial: "likes/like", locals: { item: @item }
+            
+
               %ul.optional
                 %li.optional-btn
                   = link_to "#", class: "flag" do
@@ -141,7 +143,6 @@
             .item_confirm_path
               =link_to confirm_item_path, class: "confirm_link" do
                 購入画面に進む
-
 
         .comment-box
           %p.notice-msg

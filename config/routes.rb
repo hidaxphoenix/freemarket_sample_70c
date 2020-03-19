@@ -10,8 +10,12 @@ Rails.application.routes.draw do
   root 'items#index'
   resources :items do
 
-    # collection {get "confirm"} 
-    #   resources :items, only: [:show]
+
+    resources :likes, only: [:create, :destroy]
+
+    collection {get "confirm"} 
+      resources :items, only: [:show]
+
     
     member do
       get 'confirm', to: 'items#confirm'
@@ -27,7 +31,6 @@ Rails.application.routes.draw do
       get 'search'
     end
 
-
     resources :comments, only: :create
     
     member do
@@ -37,6 +40,10 @@ Rails.application.routes.draw do
     end
 
   end
+
+
+
+
   resources :users
   resources :card, only: [:new, :show] do
     collection do
@@ -45,6 +52,10 @@ Rails.application.routes.draw do
       post 'delete', to: 'card#delete'
     end
   end
+
+
+
+
   resources :purchase, only: [:index] do
     collection do
       get 'index', to: 'purchase#index'
@@ -53,4 +64,7 @@ Rails.application.routes.draw do
     end
   end
     
+
+
+
 end

@@ -8,8 +8,14 @@ class Item < ApplicationRecord
   belongs_to :saler, class_name: "User"
   belongs_to :buyer, class_name: "User",optional:true
 
-
   has_many :comments
+
+  has_many :likes, dependent: :destroy
+  has_many :liked_users, through: :likes, source: :user
+
+  def like_user(user_id)
+    likes.where(user_id: user.id).exists?
+  end
 
   validates :name,           length: { maximum: 40 }, presence: true
   validates :description,    length: { maximum: 1000 }, presence: true

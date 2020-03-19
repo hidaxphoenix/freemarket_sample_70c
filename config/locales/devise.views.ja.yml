@@ -6,6 +6,7 @@ ja:
       - :day
   activerecord:
     errors:
+      unavailable_session:
       messages:
         record_invalid: "バリデーションに失敗しました: %{errors}"
       models:
