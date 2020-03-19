@@ -14,24 +14,3 @@
     %i.fas.fa-heart
     いいね！
     = @item.likes.count
--# - if user_signed_in?
--#   - if @item.like_user(current_user.id)
--#     .optional-btn-likebtn__dislike
--#       =link_to item_likes_path(current_user, @item, like), method: :delete, remote: true do
--#         %i.fas.fa-heart
--#         %span いいね！
--#         %span 
--#           = @item.likes_count
--#   - else
--#     .optional-btn-likebtn__like
--#       =link_to item_likes_path(current_user, @item), method: :post, remote: true do
--#         %i.fas.fa-heart
--#         %span いいね！
--#         %span
--#         = @item.likes_count
--# -else
--#   .optional-btn-likebtn__like
--#     %i.fas.fa-heart
--#       %span いいね！
--#       %span 
--#       = @item.like_count

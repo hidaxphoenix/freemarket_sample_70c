@@ -1,4 +1,2 @@
--# $(".optional-btn-likebtn").html("#{escape_javascript(render partial: 'like', locals: { item: @item, items: @items, likes: @likes, like: @like})}")
-
 $('.optional-btn-likebtn').html("#{escape_javascript(render partial: "likes/like", locals: { item: @item })}");
 -# partial: にitems/ を追加
