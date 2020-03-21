@@ -24,18 +24,24 @@
               = form.fields_for :images do |image|
                 .js-file_group{"data-index" => "#{image.index}"}
                   = image.file_field :image, class: 'js-file', id: "img-filea"
-
-
                   %label{for: "img-filea", class: "label-box", id: "img-file"}
-                    %i.edit 編集
-
+                    -# %i.edit 編集
 
                 - if @item.persisted?
                   = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
-              - if @item.persisted?
-                .js-file_group{"data-index" => "#{@item.images.count}"}
-                  = file_field_tag :image, name: "item[images_attributes][#{@item.images.count}][image]", class: 'js-file'
-                  .js-remove 削除
+              -# - if @item.persisted?
+              -#   .js-file_group{"data-index" => "#{@item.images.count}"}
+              -#     = file_field_tag :image, name: "item[images_attributes][#{@item.images.count}][image]", class: 'js-file'
+              -#     .js-remove 削除
+
+              -# 月曜日修正予定
+
+
+
+
+
+
+
 
                   -# #image-box-1
           -#   .item-num-0#image-box__container
@@ -60,19 +66,6 @@
                         %i.fas.fa-camera
                     .main__box__image__form__in__box__text__sentence
                       ドラッグアンドドロップ<br>またはクリックしてまたはクリックしてファイルをアップロード
-
-
-
-
-
-
-
-
-
-
-
-
-
         .main__box__NameAndDescripution
           .main__box__NameAndDescripution__itemname
           
