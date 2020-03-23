@@ -154,13 +154,14 @@
               = form_with(model: [@item, @comment], local: true) do |form|
                 = form.text_area :text, placeholder: "コメントする", rows: "2"
                 = form.submit "コメントする", class: "comment-btn"
+                
             - else
               %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
 
           .comments
             %h4 コメント一覧
             .comments-main
-              - if @comments 
+              - if @comment
                 - @comments.each do |comment|
                   .comment_all
                     = comment.user.nickname + ":"
