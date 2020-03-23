@@ -2,10 +2,11 @@ class CommentsController < ApplicationController
   
   def create
     # binding.pry
-    @item = Item.find_by(params[:id])
+    # 下記記述不要
+    # @comment = Comment.create
     comment = Comment.new(comment_params)
     if comment.save
-      redirect_to item_path(@item), notice:'コメントされました。'
+      redirect_to item_path(comment.item.id), notice:'コメントされました。'
     else 
       render :show, notice:'コメントの送信に失敗しました。'
     end
