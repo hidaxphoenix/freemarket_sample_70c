@@ -99,13 +99,30 @@ body{
         color: white;
       }
     } 
+    .form-any{
+      background-color: gray;
+    }
+    .new_user{
+      margin-top: 30px;
+    }
+    .password{
+      margin-top: 40px;
+    }
   }
   a{
-    padding-top: 30px;
-    text-align: center;
     position: absolute;
     left: 0;
     right: 0;
+    background-color: gray;
+    color: white;
+    width: 297px;
+    margin: 0 auto;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 20px;
+    height: 25px;
+    line-height: 25px;
+    border-radius: 5px;
   }
 }
 
