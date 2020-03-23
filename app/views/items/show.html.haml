@@ -160,12 +160,17 @@
 
           .comments
             %h4 コメント一覧
-            .comments-main
+            %ul.comments-main
               - if @comment
                 - @comments.each do |comment|
-                  .comment_all
-                    = comment.user.nickname + ":"
-                    = comment.text
+                  %li.comment_all
+                    .comment-user-name
+                      = comment.user.nickname
+                    .comment-body
+                      .comment-body-text
+                        = comment.text
+                      .comment-icon
+                        %i.fa.fa-trash
         
       
       %ul.move-items
