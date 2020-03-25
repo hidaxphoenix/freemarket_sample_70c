@@ -1,6 +1,29 @@
-%h2 購入が完了しました！
-%p Apple MacBook Pro 13インチ SALE!
-%p ¥10,000(送料込み)
+.confirm
+  .confirm__main
+    .content
+      .content__top
+        .item-wrapper
+          %h2.title
+            購入完了しました
+          .item-info
+            .item-info__wrapper
+              .item-info__wrapper__group
+                .item-info__wrapper__group__description
+                  = @item.name
+                .item-info__wrapper__group__price
+                  %span 
+                    = @item.price
+                  %span 
+                    (税込)
+                  %span 
+                    送料込み
+          .buy-info
+            %h2.buy-info__title
+              支払い金額
+            .buy-info__price
+              %span 
 
-= link_to root_path do
-  =image_tag asset_path('logo/logo.png'), class: "image1"
+                ¥ 
+                = @item.price
+          .buy-action
+            = link_to "ホームに戻る", root_path

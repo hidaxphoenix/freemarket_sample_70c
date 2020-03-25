@@ -29,7 +29,6 @@ class ItemsController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @item.comments.includes(:user)
-    @like = Like.new
   end
 
   def edit
@@ -78,6 +77,10 @@ class ItemsController < ApplicationController
       @q = Item.ransack(params[:q])
       @search_item = Item.ransack(params[:q]) 
       @items = @search_item.result
+  end
+
+  def done
+    @images = Image.where(item_id: @item.id)
   end
 
 

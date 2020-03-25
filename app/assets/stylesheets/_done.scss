@@ -1,0 +1,100 @@
+.confirm {
+  background-color: #f8f8f8;
+  &__main {
+    padding: 40px;
+    .content {
+      width: 700px;
+      margin: 0 auto;
+      &__top {
+        .item-wrapper {
+          background-color: #fff;
+          .title{
+            text-align: center;
+            font-weight: bold;
+            font-size: 30px;
+            border-bottom: 1px solid gray;
+            
+          }
+          .item-info{
+            border-bottom: 1px solid gray;
+            // padding: content-padding;
+            &__wrapper{
+              display: flex;
+              justify-content: center;
+              .img {
+                  object-fit: cover;
+                  height: 100px;
+                  width: 100px;
+                  border: 1px solid;
+              }
+              &__group{
+                padding-left: 15px;
+                &__description {
+                  font-size: 20px;
+                  margin-bottom: 8px;
+                }
+                &__price {
+                  span {
+                    font-size: 20px;
+                  }
+                  &-tax {
+                    span {
+                      font-size: 20px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .buy-info{
+            display: flex;
+            justify-content: space-between;
+            
+            font-size: 24px;
+            margin: 0 auto;
+            border-bottom: 1px solid gray;
+            
+            &__price{
+              font-weight: bold;
+            }
+          }
+          .buy-method{
+            
+            margin: 0 auto;
+            border-bottom: 1px solid gray;
+            
+          }
+          .send-address{
+            
+            margin: 0 auto;
+            border-bottom: 1px solid gray;
+            
+          }
+          .buy-action{
+            
+            text-align: center;
+            
+            margin:0 auto;
+            form button{
+              padding: 10px;
+              color: white;
+              background-color: #A4A4A4;
+              padding: 20px;
+              border-radius: 5px;
+              width: 250px;
+              font-size: 20px;
+            }
+          }
+          .app-invitation{
+            text-align: center;
+            margin-bottom: 24px;
+          }
+          .app-link-group{
+            text-align: center;
+            padding-bottom: 24px;
+          }
+        }
+      }
+    }
+  }
+}
