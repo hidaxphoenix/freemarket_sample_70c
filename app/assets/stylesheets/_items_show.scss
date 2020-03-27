@@ -244,10 +244,11 @@
         }
       }
       .comment-box {
-        padding: 10px 24px;
+        padding: 50px 24px;
         background-color: #fff;
         margin: 10px 0;
         text-align: center;
+        overflow: overlay;
         .notice-msg {
           padding: 8px;
           font-size: 14px;
@@ -290,10 +291,35 @@
           }
         }
         .comments{
+          padding: 24px;
           .comments-main{
-            .comment_all{
+            .comments-main li:first-child {
+              margin: 1.5em 0 0;
               padding: 10px 0;
               font-size: 20px;
+            }
+            .comment_all{
+              margin: 60px 0 0;
+              .comment-user-name{
+                float: right;
+                margin: 15px;
+              }
+              .comment-body{
+                width: 100%;
+                float: left;
+                background: #fbf0e6;
+                border-radius: 15px;
+                padding: 16px;
+                .comment-body-text{
+                  font-size: 16px;
+                  text-align: left;
+                }
+                .comment-icon{
+                  margin: 8px 0 0;
+                  float: right;
+                  cursor: pointer;
+                }
+              }
             }
           }
         }

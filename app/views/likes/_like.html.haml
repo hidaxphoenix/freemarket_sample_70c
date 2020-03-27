@@ -1,16 +1,13 @@
-- if user_signed_in? 
-  - if @item.like_user(current_user.id) # ログイン中のユーザーがいいねしているかしていないかを判断
-    = link_to item_likes_path(@item.id), method: :delete, class: "like red", remote: true do
-      %i.fas.fa-heart
-      いいね！
-      = @item.likes.count
+.option__like{:id => "like-link-#{@item.id}"}
+  - if current_user.likes.find_by(item_id: item.id)
+    = link_to unlike_item_path(@item.id, @item.id), method: :delete, remote: true, class: "option__like-on" do
+      .fas.fa-star
+      .option__like-on__text いいね！
+      .option__like-on__count
+        =item.likes.count
   - else
-    = link_to item_likes_path(@item.id), method: :post, class: "like", remote: true do
-      %i.fas.fa-heart
-      いいね！
-      = @item.likes.count
-- else
-  = link_to new_user_session_path, class: "like", remote: false do
-    %i.fas.fa-heart
-    いいね！
-    = @item.likes.count
+    = link_to  like_item_path(@item.id, @item.id), method: :post, remote: true, class: "option__like-off" do
+      .fas.fa-star
+      .option__like-off__text いいね！
+      .option__like-off__count
+        =item.likes.count

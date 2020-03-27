@@ -13,9 +13,6 @@ class Item < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :liked_users, through: :likes, source: :user
 
-  def like_user(user_id)
-    likes.where(user_id: user.id).exists?
-  end
 
   validates :name,           length: { maximum: 40 }, presence: true
   validates :description,    length: { maximum: 1000 }, presence: true
