@@ -13,7 +13,7 @@
               %span
                 必須
           .main__box__image__description
-            最大4枚までアップロードできます
+            最大5枚までアップロードできます
 
           .main__box__image__container 
             #previews
@@ -22,17 +22,19 @@
                   = image_tag image.image.url, data: { index: i }, width: "100", height: '100'
             #image-box
               = form.fields_for :images do |image|
-                .js-file_group{"data-index" => "#{image.index}"}
+                .js-file_group{"data-index" => "#{image.index}}
                   = image.file_field :image, class: 'js-file', id: "img-filea"
                   %label{for: "img-filea", class: "label-box", id: "img-file"}
                     -# %i.edit 編集
 
-                - if @item.persisted?
-                  = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
-              -# - if @item.persisted?
-              -#   .js-file_group{"data-index" => "#{@item.images.count}"}
-              -#     = file_field_tag :image, name: "item[images_attributes][#{@item.images.count}][image]", class: 'js-file'
-              -#     .js-remove 削除
+                
+                  = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy', id: "a"
+                  %label{id: "a", data:{ index: image.index }}
+                    .js-remove 削除
+                -# - if @item.persisted?
+              .js-file_group{"data-index" => "#{@item.images.count}"}
+                = file_field_tag :image, name: "item[images_attributes][#{@item.images.count}][image]", class: 'js-file'
+                .js-remove 削除
 
               -# 月曜日修正予定
 
@@ -102,8 +104,8 @@
             .main__box__detail__category__form
               .main__box__detail__category__form__box
 
-                = form.select :category, options_for_select(@category_parent_array.map{|c|[c[:name], c[:name], {'data-category'=>c[:id], 'id'=>c[:id]}]}, @item.category.parent.parent.id), {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category_edit', name:"",value: @parent} # @category_parent_arrayには、parent.nameが入っている。
-                = form.select :category, options_for_select(@category_child_array.map{|c|[c[:name], c[:name], {'data-category'=>c[:id], 'id'=>c[:id]}]}, @item.category.parent.id), {}, {class: 'select', id: 'child_category_edit', name:""}
+                = form.select :category, options_for_select(@category_parent_array.map{|c|[c[:name], c[:name], {'data-category'=>c[:id], 'id'=>c[:id]}]}, @item.category.id), {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category_edit', name:"",value: @parent} # @category_parent_arrayには、parent.nameが入っている。
+                = form.select :category, options_for_select(@category_child_array.map{|c|[c[:name], c[:name], {'data-category'=>c[:id], 'id'=>c[:id]}]}, @item.category.id), {}, {class: 'select', id: 'child_category_edit', name:""}
                 = form.select :category, options_for_select(@category_grandchildren2.map{|c|[c[:name], c[:id], {'data-category'=>c[:id], 'id'=>c[:id]}]}, @item.category.id), {}, {class: 'select', id: 'grandchild_category_edit',name:"category_id", value: @item.category.id}
 
 
