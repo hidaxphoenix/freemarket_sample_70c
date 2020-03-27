@@ -45,13 +45,6 @@
           -#               %i.fas.fa-camera
           -#           .main__box__image__form__in__box__text__sentence
           -#             ドラッグアンドドロップ<br>またはクリックしてまたはクリックしてファイルをアップロード
-
-
-
-
-
-
-
         .main__box__NameAndDescripution
           .main__box__NameAndDescripution__itemname
           
@@ -90,11 +83,11 @@
                 = form.select :category, @category_parent_array, {:prompt => "---" }, {class: 'listing-select-wrapper__box--select', id: 'parent_category', name:"", :required => ""} # @category_parent_arrayには、parent.nameが入っている。
                 // @category_parent_arrayの内容を選択肢に表示
 
-          .main__box__detail__bland
-            .main__box__detail__bland__text
-              ブランド
-              %span
-                任意
+          -# .main__box__detail__bland
+          -#   .main__box__detail__bland__text
+          -#     ブランド
+          -#     %span
+          -#       任意
             .main__box__detail__bland__form
               .main__box__detail__bland__form__box
                 %input.blandform{:placeholder => "例) シャネル"}
