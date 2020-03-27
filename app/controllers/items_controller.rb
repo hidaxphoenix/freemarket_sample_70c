@@ -32,6 +32,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    # bindin/.pry
     @category_parent_array = Category.roots
     @category_child_array = @item.category.parent.parent.children
     @category_grandchildren2 = @item.category.parent.children

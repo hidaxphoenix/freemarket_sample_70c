@@ -13,7 +13,7 @@
               %span
                 必須
           .main__box__image__description
-            最大4枚までアップロードできます
+            最大5枚までアップロードできます
 
           .main__box__image__container 
             #previews
@@ -27,21 +27,16 @@
                   %label{for: "img-filea", class: "label-box", id: "img-file"}
                     -# %i.edit 編集
 
-                - if @item.persisted?
-                  = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
-              -# - if @item.persisted?
-              -#   .js-file_group{"data-index" => "#{@item.images.count}"}
-              -#     = file_field_tag :image, name: "item[images_attributes][#{@item.images.count}][image]", class: 'js-file'
-              -#     .js-remove 削除
+                
+                  = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy', id: "a"
+                  %label{id: "a", data:{ index: image.index }}
+                    .js-remove 削除
+                -# - if @item.persisted?
+              .js-file_group{"data-index" => "#{@item.images.count}"}
+                = file_field_tag :image, name: "item[images_attributes][#{@item.images.count}][image]", class: 'js-file'
+                .js-remove 削除
 
               -# 月曜日修正予定
-
-
-
-
-
-
-
 
                   -# #image-box-1
           -#   .item-num-0#image-box__container
@@ -111,11 +106,11 @@
 
                 // @category_parent_arrayの内容を選択肢に表示
 
-          .main__box__detail__bland
-            .main__box__detail__bland__text
-              ブランド
-              %span
-                任意
+          -# .main__box__detail__bland
+          -#   .main__box__detail__bland__text
+          -#     ブランド
+          -#     %span
+          -#       任意
             .main__box__detail__bland__form
               .main__box__detail__bland__form__box
                 %input.blandform{:placeholder => "例) シャネル"}

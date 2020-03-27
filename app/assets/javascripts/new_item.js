@@ -155,7 +155,7 @@
   }
 
   // file_fieldのnameに動的なindexをつける為の配列
-  let fileIndex = [1,2,3];
+  let fileIndex = [1,2,3,4];
   // 既に使われているindexを除外
   lastIndex = $('.js-file_group:last').data('index');
   fileIndex.splice(0, lastIndex);
@@ -170,6 +170,7 @@
 
     // 該当indexを持つimgがあれば取得して変数imgに入れる(画像変更の処理)
     if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
+      console.log(targetIndex)
       img.setAttribute('src', blobUrl);
       
     } else {  // 新規画像追加の処理
@@ -191,10 +192,12 @@
     if (hiddenCheck) hiddenCheck.prop('checked', true);
 
     $(this).parent().remove();
+    
     $(`img[data-index="${targetIndex}"]`).remove();
 
     // 画像入力欄が0個にならないようにしておく
     if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
   });
   // $('.js-file').remove();
+
 });
