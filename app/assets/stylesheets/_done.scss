@@ -1,5 +1,6 @@
 .confirm {
   background-color: #f8f8f8;
+  height: 790px;
   &__main {
     padding: 40px;
     .content {
@@ -13,7 +14,7 @@
             font-weight: bold;
             font-size: 30px;
             border-bottom: 1px solid gray;
-            
+            padding: 30px;
           }
           .item-info{
             border-bottom: 1px solid gray;
@@ -21,6 +22,7 @@
             &__wrapper{
               display: flex;
               justify-content: center;
+              padding: 15px;
               .img {
                   object-fit: cover;
                   height: 100px;
@@ -49,7 +51,7 @@
           .buy-info{
             display: flex;
             justify-content: space-between;
-            
+            padding: 30px;
             font-size: 24px;
             margin: 0 auto;
             border-bottom: 1px solid gray;
@@ -71,9 +73,8 @@
             
           }
           .buy-action{
-            
+            padding: 40px 0 40px;
             text-align: center;
-            
             margin:0 auto;
             form button{
               padding: 10px;
@@ -83,6 +84,15 @@
               border-radius: 5px;
               width: 250px;
               font-size: 20px;
+              
+            }
+            a{
+              text-decoration: none;
+              color:white;
+              border: 1px solid;
+              border-radius: 5px;
+              padding: 5px 10px;
+              background-color: #3CCACE;;
             }
           }
           .app-invitation{
