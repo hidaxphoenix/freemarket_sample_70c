@@ -56,7 +56,7 @@
                   = image_tag asset_path('default.jpg'), class:"low-pic-image"
               -if @item.images.fourth.present?
                 %li.low-pic
-                  = image_tag @item.images.fourth.image.to_s, class:"low-pic-image"
+                  = image_tag @item.images.fifth.image.to_s, class:"low-pic-image"
               -else
                 %li.low-pic
                   = image_tag asset_path('default.jpg'), class:"low-pic-image"
