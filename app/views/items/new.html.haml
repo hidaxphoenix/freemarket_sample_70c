@@ -56,9 +56,7 @@
             .main__box__detail__category__form
               .main__box__detail__category__form__box
                 = form.select :category, @category_parent_array, {:prompt => "---" }, {class: 'listing-select-wrapper__box--select', id: 'parent_category', name:"", :required => ""} # @category_parent_arrayには、parent.nameが入っている。
-            .main__box__detail__bland__form
-              .main__box__detail__bland__form__box
-                %input.blandform{:placeholder => "例) シャネル"}
+
                 
           .main__box__detail__status
             .main__box__detail__status__text
