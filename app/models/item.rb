@@ -3,6 +3,7 @@ class Item < ApplicationRecord
   belongs_to :category, optional: true
   # has_one :condition
   has_many :images, dependent: :destroy
+  accepts_nested_attributes_for :images, allow_destroy: true
   # has_one :trade
 
   belongs_to :saler, class_name: "User"
