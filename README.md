@@ -47,29 +47,19 @@ ttttttt
 
 # DEMO
 * TOPページ
-[![Image from Gyazo](https://i.gyazo.com/6d2c9c36952e6771bb6600c8f2d3e070.png)](https://gyazo.com/6d2c9c36952e6771bb6600c8f2d3e070)
+
 
 * ユーザー登録・ログイン機能
-[![Image from Gyazo](https://i.gyazo.com/8720f5c602fbfaa6f95c21040bc3e98e.png)](https://gyazo.com/8720f5c602fbfaa6f95c21040bc3e98e)
-[![Image from Gyazo](https://i.gyazo.com/d3444971f50293eb6999a3e3d3c42d60.png)](https://gyazo.com/d3444971f50293eb6999a3e3d3c42d60)
+
 
 * 投稿一覧ページ
-[![Image from Gyazo](https://i.gyazo.com/3782c5482c883c07cdd6388275a0d225.jpg)](https://gyazo.com/3782c5482c883c07cdd6388275a0d225)
+
 
 * 検索機能
-[![Image from Gyazo](https://i.gyazo.com/7b7b4b67fcda760cef67e232b3ad70de.gif)](https://gyazo.com/7b7b4b67fcda760cef67e232b3ad70de)
+
 
 * 新規投稿
-[![Image from Gyazo](https://i.gyazo.com/f2dc4acc9f703bbadc21ac54644f8753.jpg)](https://gyazo.com/f2dc4acc9f703bbadc21ac54644f8753)
 
-* ユーザー一覧
-[![Image from Gyazo](https://i.gyazo.com/9813d241d0fc81720098cf7171fa7cf7.jpg)](https://gyazo.com/9813d241d0fc81720098cf7171fa7cf7)
-
-* いいねランキング！
-[![Image from Gyazo](https://i.gyazo.com/753e90b5580f32f49de6c4d4daf33a32.jpg)](https://gyazo.com/753e90b5580f32f49de6c4d4daf33a32)
-
-* コメント機能
-[![Image from Gyazo](https://i.gyazo.com/6b7e6c208069b8f637d4c0c5556122bd.png)](https://gyazo.com/6b7e6c208069b8f637d4c0c5556122bd)
 
 # 工夫したポイント
 ユーザーの方が、使いやすいようにviewの綺麗さをこだわりました。
@@ -77,9 +67,6 @@ ttttttt
 
 # 使用技術(開発環境)
 Ruby・Ruby on Rails・JavaScript・jQuery・GitHub・AWS
-
-# 課題や今後実装したい機能
-
 
 
 #  DB設計
