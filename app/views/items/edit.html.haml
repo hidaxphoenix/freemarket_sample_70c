@@ -31,10 +31,10 @@
                   = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy', id: "a"
                   %label{id: "a", data:{ index: image.index }}
                     .js-remove 削除
-                -# - if @item.persisted?
-              -# .js-file_group{"data-index" => "#{@item.images.count}"}
-              -#   = file_field_tag :image, name: "item[images_attributes][#{@item.images.count}][image]", class: 'js-file'
-              -#   .js-remove 削除
+              - if @item.persisted?
+                .js-file_group{"data-index" => "#{@item.images.count}"}
+                  = file_field_tag :image, name: "item[images_attributes][#{@item.images.count}][image]", class: 'js-file'
+                  .js-remove 削除
 
               -# 月曜日修正予定
 
