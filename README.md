@@ -47,23 +47,34 @@ ttttttt
 
 # DEMO
 * TOPページ
+[![Image from Gyazo](https://i.gyazo.com/1e560dc2ac8672fcdc50cca82c66cf2d.jpg)](https://gyazo.com/1e560dc2ac8672fcdc50cca82c66cf2d)
 
 
 * ユーザー登録・ログイン機能
+[![Image from Gyazo](https://i.gyazo.com/0d9bae7d539760974216e1ec28c13596.png)](https://gyazo.com/0d9bae7d539760974216e1ec28c13596)
+[![Image from Gyazo](https://i.gyazo.com/eb0e2ec7f1a1e1292d261de27ab38352.png)](https://gyazo.com/eb0e2ec7f1a1e1292d261de27ab38352)
 
 
-* 投稿一覧ページ
+* 出品ページ
+[![Image from Gyazo](https://i.gyazo.com/a1118a1f24c8a5ff11ecc561eeec1431.png)](https://gyazo.com/a1118a1f24c8a5ff11ecc561eeec1431)
 
 
-* 検索機能
+* 商品詳細ページ
+[![Image from Gyazo](https://i.gyazo.com/8860f085e3f4e5e381f2f21168dd3405.png)](https://gyazo.com/8860f085e3f4e5e381f2f21168dd3405)
 
 
-* 新規投稿
+* 編集・削除機能、コメント機能、いいね！機能
+[![Image from Gyazo](https://i.gyazo.com/cdc10411221eccc84b21108077a742c2.png)](https://gyazo.com/cdc10411221eccc84b21108077a742c2)
 
 
-# 工夫したポイント
-ユーザーの方が、使いやすいようにviewの綺麗さをこだわりました。
-また、
+* ユーザーマイページ
+[![Image from Gyazo](https://i.gyazo.com/4245315fff2fecd4a3a559cb1a69d92a.png)](https://gyazo.com/4245315fff2fecd4a3a559cb1a69d92a)
+
+
+* 購入機能
+[![Image from Gyazo](https://i.gyazo.com/6cc6f7001eb74d6ed3e995dcc0051489.png)](https://gyazo.com/6cc6f7001eb74d6ed3e995dcc0051489)
+[![Image from Gyazo](https://i.gyazo.com/59b940ed75d8f194fd2007acf479efa3.png)](https://gyazo.com/59b940ed75d8f194fd2007acf479efa3)
+
 
 # 使用技術(開発環境)
 Ruby・Ruby on Rails・JavaScript・jQuery・GitHub・AWS
