@@ -17,7 +17,6 @@
 
           .main__box__image__container
             #previews
-            -# .label-content
               
             #image-box
               = form.fields_for :images do |image|
@@ -25,26 +24,6 @@
                   = image.file_field :image, class: 'js-file', id:"img-file"
                   %label{for: "img-file", class: "label-box", id: "img-file"}
               
-                    -# %i.fas.fa-camera
-                    -#   %pre.label-box__text-visible クリックしてファイルをアップロード
-                  -# %br/
-                  -# %span.js-remove 削除
-                
-  
-                  -# #image-box-1
-          -#   .item-num-0#image-box__container
-          -#     .main__box__image__form__in
-          -#       .main__box__image__form__in__box
-          -#         = form.fields_for :images do |image|
-          -#           -# .input_area
-          -#           = image.file_field :image, type: 'file', name: "item[images_attributes][][image]", value:"", style: "display:none", id:"img-file", :required => ""
-                    
-          -#         .main__box__image__form__in__box__text
-          -#           .main__box__image__form__in__box__text__icon
-          -#             %label{for: "img-file"}
-          -#               %i.fas.fa-camera
-          -#           .main__box__image__form__in__box__text__sentence
-          -#             ドラッグアンドドロップ<br>またはクリックしてまたはクリックしてファイルをアップロード
         .main__box__NameAndDescripution
           .main__box__NameAndDescripution__itemname
           
@@ -54,7 +33,6 @@
                 必須
             .main__box__NameAndDescripution__itemname__form
               .main__box__NameAndDescripution__itemname__form__box
-                -# %input.itemnameform{:placeholder => "40文字まで"}/
                 = form.text_field :name, {placeholder:  '40文字まで',class: 'itemnameform', :required => ""}
           .main__box__NameAndDescripution__itemDescription
             .main__box__NameAndDescripution__itemDescription__sentence
@@ -63,11 +41,8 @@
                 必須
             .main__box__NameAndDescripution__itemDescription__form
               .main__box__NameAndDescripution__itemDescription__form__box
-                -# #textCount 0 
-                -# %span.remaining-counter 文字入力しました。
                 #textLest 1000
                 %span.remaining-counter 文字入力できます。
-                -# #textAttention 入力文字数が多すぎます。
                 =form.text_area :description, {id: "textArea", cols:"40", rows:"15", placeholder: "商品の説明 (必須 1,000字以内)\n (色、素材、、素材、重さ、、素材、重さ、定価、注意点など)\n\n例)2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでおすすめです。", :required => ""}      
 
         .main__box__detail
@@ -81,13 +56,6 @@
             .main__box__detail__category__form
               .main__box__detail__category__form__box
                 = form.select :category, @category_parent_array, {:prompt => "---" }, {class: 'listing-select-wrapper__box--select', id: 'parent_category', name:"", :required => ""} # @category_parent_arrayには、parent.nameが入っている。
-                // @category_parent_arrayの内容を選択肢に表示
-
-          -# .main__box__detail__bland
-          -#   .main__box__detail__bland__text
-          -#     ブランド
-          -#     %span
-          -#       任意
             .main__box__detail__bland__form
               .main__box__detail__bland__form__box
                 %input.blandform{:placeholder => "例) シャネル"}
@@ -104,8 +72,7 @@
 
         .main__box__delivery
           .main__box__delivery__text 配送について
-          -# = link_to '#', class: 'listing-product-help' do
-          -#   ?
+          
           .main__box__delivery__fee
             .main__box__delivery__fee__text
               = form.label '配送料の負担', class: 'listing-default__label' 
