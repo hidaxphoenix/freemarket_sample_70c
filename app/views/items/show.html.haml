@@ -147,9 +147,10 @@
                 = link_to item_path, method: :delete, class: "item_destroy_path" do
                   この商品を削除する
           -else
-            .item_confirm_path
-              =link_to confirm_item_path, class: "confirm_link" do
-                購入画面に進む
+            -if user_signed_in? && current_user.id != @item.user_id
+              .item_confirm_path
+                =link_to confirm_item_path, class: "confirm_link" do
+                  購入画面に進む
 
         .comment-box
           %p.notice-msg
