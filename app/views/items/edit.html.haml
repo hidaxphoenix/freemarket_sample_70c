@@ -19,22 +19,28 @@
             #previews
               - if @item.persisted?
                 - @item.images.each_with_index do |image, i|
-                  = image_tag image.image.url, data: { index: i }, width: "100", height: '100'
+                  = image_tag image.image.url, data: { index: i }, width: "100", height: '100', class: "imggg"
             #image-box
               = form.fields_for :images do |image|
+                = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy', id: "a"
                 .js-file_group{"data-index" => "#{image.index}"}
                   = image.file_field :image, class: 'js-file', id: "img-filea"
-                  %label{for: "img-filea", class: "label-box", id: "img-file"}
+                  -# %label{for: "img-filea", class: "label-box", id: "img-file"}
                     -# %i.edit 編集
+                  -# %label{id: "a", data:{ index: image.index }}
+                  .js-remove
+                    削除
+                
 
                 
-                  = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy', id: "a"
-                  %label{id: "a", data:{ index: image.index }}
-                    .js-remove 削除
-              - if @item.persisted?
+                  
+                  -# %label{id: "a", data:{ index: image.index }}
+                  -#   .js-remove 削除
+              - if @item.persisted? && @item.images.length < 5
                 .js-file_group{"data-index" => "#{@item.images.count}"}
                   = file_field_tag :image, name: "item[images_attributes][#{@item.images.count}][image]", class: 'js-file'
-                  .js-remove 削除
+                  .js-remove.remove-new  
+                    削除
 
               -# 月曜日修正予定
 
