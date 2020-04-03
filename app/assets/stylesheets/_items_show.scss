@@ -172,7 +172,7 @@
                 height: 40px;
                 width: 115px;
                 .option__like{
-                  font-size: 10px;
+                  font-size: 15px;
                   display: flex;
                   a {
                     text-decoration: none;
@@ -212,6 +212,27 @@
                       line-height: 27px;
                       font-size: 17px;
                     }
+                  }
+                  .fas.fa-star{
+                    display: inline-block;
+                    font-size: inherit;
+                    text-rendering: auto;
+                    -webkit-font-smoothing: antialiased;
+                    color: #3CCACE;
+                    text-decoration: none;
+                    line-height: 25px;
+                  }
+                  .option__like-else__text{
+                    color: #3CCACE;
+                    text-decoration: none;
+                    margin-left: 5px;
+                    line-height: 28px;
+                  }
+                  .option__like-else__count{
+                    color: #3CCACE;
+                    text-decoration: none;
+                    line-height: 27px;
+                    font-size: 17px;
                   }
                 }
               }
