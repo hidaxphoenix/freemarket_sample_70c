@@ -1,28 +1,88 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# freemarket_sample_70c
 
-Things you may want to cover:
+# 概要
 
-* Ruby version
+フリマアプリ「メルカリ」のクローンサイト。誰でも簡単に売り買いが楽しめるフリマアプリの機能を再現したページ。 ユーザー登録、商品出品、商品購入などの機能が再現されていますが、実際の取引はできません。
 
-* System dependencies
+* haml/SASS記法と、命名規則BEMを使ったマークアップ
+* ウィザード形式を用いたユーザー登録フォーム
+* SNS認証による新規登録、ログイン
+* ajaxを使用した非同期処理
+* pay.jpによる購入処理
+* capistranoによるAWS EC2への自動デプロイ
+* ActiveStorageを使用しAWS S3への画像アップロード
+* RSpecを使った単体テスト
 
-* Configuration
 
-* Database creation
+# 本番環境(デプロイ先 テストアカウント＆ID)
 
-* Database initialization
+* デプロイ先
 
-* How to run the test suite
+http://18.178.147.81/
 
-* Services (job queues, cache servers, search engines, etc.)
+* テストアカウント
 
-* Deployment instructions
+ID/Pass
+ID: teamc
+Pass: 1111
 
-* ...
+購入者用
+test2@test2
+ttttttt
 
+購入用カード情報
+番号：4242424242424242
+期限：2月2023年
+セキュリティコード：432
+
+出品者用
+メールアドレス名: test@test
+パスワード: ttttttt
+
+
+テストアカウントを使用してログインしてください。
+
+
+# DEMO
+* TOPページ
+[![Image from Gyazo](https://i.gyazo.com/1e560dc2ac8672fcdc50cca82c66cf2d.jpg)](https://gyazo.com/1e560dc2ac8672fcdc50cca82c66cf2d)
+
+
+* ユーザー登録
+[![Image from Gyazo](https://i.gyazo.com/0d9bae7d539760974216e1ec28c13596.png)](https://gyazo.com/0d9bae7d539760974216e1ec28c13596)
+
+
+* ログイン機能
+[![Image from Gyazo](https://i.gyazo.com/eb0e2ec7f1a1e1292d261de27ab38352.png)](https://gyazo.com/eb0e2ec7f1a1e1292d261de27ab38352)
+
+
+* 出品ページ
+[![Image from Gyazo](https://i.gyazo.com/a1118a1f24c8a5ff11ecc561eeec1431.png)](https://gyazo.com/a1118a1f24c8a5ff11ecc561eeec1431)
+
+
+* 商品詳細ページ
+[![Image from Gyazo](https://i.gyazo.com/8860f085e3f4e5e381f2f21168dd3405.png)](https://gyazo.com/8860f085e3f4e5e381f2f21168dd3405)
+
+
+* 編集・削除機能、コメント機能、いいね！機能
+[![Image from Gyazo](https://i.gyazo.com/cdc10411221eccc84b21108077a742c2.png)](https://gyazo.com/cdc10411221eccc84b21108077a742c2)
+
+
+* ユーザーマイページ
+[![Image from Gyazo](https://i.gyazo.com/4245315fff2fecd4a3a559cb1a69d92a.png)](https://gyazo.com/4245315fff2fecd4a3a559cb1a69d92a)
+
+
+* 購入機能
+[![Image from Gyazo](https://i.gyazo.com/6cc6f7001eb74d6ed3e995dcc0051489.png)](https://gyazo.com/6cc6f7001eb74d6ed3e995dcc0051489)
+
+* 購入確認画面
+[![Image from Gyazo](https://i.gyazo.com/59b940ed75d8f194fd2007acf479efa3.png)](https://gyazo.com/59b940ed75d8f194fd2007acf479efa3)
+
+
+# 使用技術(開発環境)
+Ruby・Ruby on Rails・JavaScript・jQuery・GitHub・AWS
 
 
 #  DB設計
