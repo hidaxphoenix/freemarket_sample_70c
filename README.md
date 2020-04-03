@@ -50,8 +50,11 @@ ttttttt
 [![Image from Gyazo](https://i.gyazo.com/1e560dc2ac8672fcdc50cca82c66cf2d.jpg)](https://gyazo.com/1e560dc2ac8672fcdc50cca82c66cf2d)
 
 
-* ユーザー登録・ログイン機能
+* ユーザー登録
 [![Image from Gyazo](https://i.gyazo.com/0d9bae7d539760974216e1ec28c13596.png)](https://gyazo.com/0d9bae7d539760974216e1ec28c13596)
+
+
+* ログイン機能
 [![Image from Gyazo](https://i.gyazo.com/eb0e2ec7f1a1e1292d261de27ab38352.png)](https://gyazo.com/eb0e2ec7f1a1e1292d261de27ab38352)
 
 
@@ -73,6 +76,8 @@ ttttttt
 
 * 購入機能
 [![Image from Gyazo](https://i.gyazo.com/6cc6f7001eb74d6ed3e995dcc0051489.png)](https://gyazo.com/6cc6f7001eb74d6ed3e995dcc0051489)
+
+* 購入確認画面
 [![Image from Gyazo](https://i.gyazo.com/59b940ed75d8f194fd2007acf479efa3.png)](https://gyazo.com/59b940ed75d8f194fd2007acf479efa3)
 
 
